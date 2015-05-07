@@ -1,0 +1,5 @@
+com\dotTracePlugin\agent\dotTraceProfilerCommandLineBuilder.class
+com\dotTracePlugin\agent\dotTraceRunner.class
+com\dotTracePlugin\agent\dotTraceRunnerInfo.class
+com\dotTracePlugin\agent\dotTraceBuildService$1.class
+com\dotTracePlugin\agent\dotTraceBuildService.class

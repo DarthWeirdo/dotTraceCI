@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/build/build.iml" filepath="$PROJECT_DIR$/build/build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dotTracePlugin.iml" filepath="$PROJECT_DIR$/dotTracePlugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dotTracePlugin-agent/dotTracePlugin-agent.iml" filepath="$PROJECT_DIR$/dotTracePlugin-agent/dotTracePlugin-agent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dotTracePlugin-common/dotTracePlugin-common.iml" filepath="$PROJECT_DIR$/dotTracePlugin-common/dotTracePlugin-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dotTracePlugin-server/dotTracePlugin-server.iml" filepath="$PROJECT_DIR$/dotTracePlugin-server/dotTracePlugin-server.iml" />
+    </modules>
+  </component>
+</project>

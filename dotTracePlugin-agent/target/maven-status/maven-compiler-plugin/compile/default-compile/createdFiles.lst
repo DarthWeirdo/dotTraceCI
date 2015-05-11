@@ -1,5 +1,7 @@
-com\dotTracePlugin\agent\dotTraceProfilerCommandLineBuilder.class
-com\dotTracePlugin\agent\dotTraceRunner.class
-com\dotTracePlugin\agent\dotTraceRunnerInfo.class
-com\dotTracePlugin\agent\dotTraceBuildService$1.class
-com\dotTracePlugin\agent\dotTraceBuildService.class
+com\dotTracePlugin\agent\runner\dotTraceProfilerCommandLineBuilder.class
+com\dotTracePlugin\agent\model\ProfiledMethod.class
+com\dotTracePlugin\agent\runner\dotTraceBuildService.class
+com\dotTracePlugin\agent\runner\dotTraceRunner.class
+com\dotTracePlugin\agent\runner\dotTraceBuildService$1.class
+com\dotTracePlugin\agent\model\ReportPattern.class
+com\dotTracePlugin\agent\runner\dotTraceRunnerInfo.class

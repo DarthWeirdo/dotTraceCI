@@ -1,4 +1,4 @@
-package com.dotTracePlugin.agent;
+package com.dotTracePlugin.agent.runner;
 
 import com.dotTracePlugin.common.dotTraceRunnerConstants;
 import jetbrains.buildServer.RunBuildException;

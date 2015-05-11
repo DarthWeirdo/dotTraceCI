@@ -6,3 +6,7 @@
 <div class="parameter">
     dotTrace path: <strong><props:displayValue name="<%=dotTraceRunnerConstants.PARAM_DOTTRACE_PATH%>" emptyValue="default"/></strong>
 </div>
+
+<div class="parameter">
+    Threshold values: <strong><props:displayValue name="<%=dotTraceRunnerConstants.PARAM_THRESHOLDS%>" emptyValue="default"/></strong>
+</div>

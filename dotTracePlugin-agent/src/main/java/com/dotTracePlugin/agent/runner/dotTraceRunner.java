@@ -1,4 +1,4 @@
-package com.dotTracePlugin.agent;
+package com.dotTracePlugin.agent.runner;
 
 import jetbrains.buildServer.agent.AgentBuildRunnerInfo;
 import jetbrains.buildServer.agent.runner.CommandLineBuildService;

@@ -8,7 +8,9 @@ import jetbrains.buildServer.util.StringUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
+import java.util.List;
 import java.util.Map;
+import java.util.Vector;
 
 /**
  * Created by Alexey.Totin on 5/6/2015.
@@ -31,6 +33,13 @@ public class dotTraceProfilerCommandLineBuilder {
         String result = new File(dotTraceRelativePath, dotTraceRunnerConstants.DT_RUN_SCRIPT).getPath();
         myLogger.message("Searching for profiling script: " + result);
         return result;
+    }
+
+    @NotNull
+    public List<String> getArguments() throws RunBuildException {
+        List<String> arguments = new Vector<String>();
+        arguments.add(0, dotTraceRunnerConstants.DT_REPORTER_CONFIG);
+        return arguments;
     }
 
 }

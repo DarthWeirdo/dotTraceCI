@@ -1,5 +1,7 @@
+com\dotTracePlugin\agent\tools\XMLConverter.class
 com\dotTracePlugin\agent\runner\dotTraceProfilerCommandLineBuilder.class
 com\dotTracePlugin\agent\model\ProfiledMethod.class
+com\dotTracePlugin\agent\runner\dotTraceReporterConfigBuilder.class
 com\dotTracePlugin\agent\runner\dotTraceBuildService.class
 com\dotTracePlugin\agent\runner\dotTraceRunner.class
 com\dotTracePlugin\agent\runner\dotTraceBuildService$1.class

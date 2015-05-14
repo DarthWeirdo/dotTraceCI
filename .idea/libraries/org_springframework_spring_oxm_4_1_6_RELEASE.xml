@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="org.springframework:spring-oxm:4.1.6.RELEASE" type="repository">
+    <properties maven-id="org.springframework:spring-oxm:4.1.6.RELEASE" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/spring-oxm-4.1.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-beans-4.1.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-core-4.1.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-logging-1.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

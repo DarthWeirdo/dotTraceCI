@@ -1,12 +1,25 @@
 package com.dotTracePlugin.agent.model;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlValue;
+
 /**
  * Created by Alexey.Totin on 5/11/2015.
  */
-public class ReportPattern {
-    public String Pattern;
 
-    public ReportPattern(String pattern){
+@XmlRootElement(name = "Pattern")
+public class ReportPattern {
+    private String Pattern;
+
+
+
+    public String getPattern() {
+        return Pattern;
+    }
+
+    @XmlValue()
+    public void setPattern(String pattern) {
         Pattern = pattern;
     }
 }

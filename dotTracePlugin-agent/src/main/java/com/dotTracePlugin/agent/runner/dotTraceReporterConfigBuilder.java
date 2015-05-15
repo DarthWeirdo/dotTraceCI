@@ -14,37 +14,32 @@ import java.util.List;
 import java.util.Map;
 import java.util.Vector;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 /**
  * Created by Alexey.Totin on 5/11/2015.
  */
 public class dotTraceReporterConfigBuilder {
-    private String myThresholdValues;
+    private String myThresholdValuesString;
     private String myDotTracePath;
     private final SimpleBuildLogger myLogger;
-    public Map<String, ProfiledMethod> ThresholdValues;
+    private Map<String, ProfiledMethod> myThresholdValuesMap = new HashMap<String, ProfiledMethod>();
 
     public dotTraceReporterConfigBuilder(String thresholdValues, String dotTracePath, SimpleBuildLogger logger) {
-        myThresholdValues = thresholdValues;
+        myThresholdValuesString = thresholdValues;
         myDotTracePath = dotTracePath;
         myLogger = logger;
-        ThresholdValues = new HashMap<String, ProfiledMethod>();
     }
 
-    public void makeConfig() throws IOException {
+    public Map<String, ProfiledMethod> makeConfig() throws IOException {
 
         // Parse threshold values string
-        myLogger.message("Parsing threshold values..." + myThresholdValues);
-        String[] lines = myThresholdValues.split("\\r?\\n");
+        myLogger.message("Parsing threshold values..." + myThresholdValuesString);
+        String[] lines = myThresholdValuesString.split("\\r?\\n");
 
         for (String line : lines) {
             String[] splitLine = line.split("\\s+");
             ProfiledMethod method = new ProfiledMethod(
-                    splitLine[0], splitLine[1], splitLine[2], splitLine[3], splitLine[4]);
-            ThresholdValues.put(splitLine[0], method);
-            myLogger.message("Add line: " + splitLine[0]);
+                    "x",splitLine[0], splitLine[1], splitLine[2], splitLine[3], splitLine[4]);
+            myThresholdValuesMap.put(splitLine[0], method);
         }
 
         // Generate XML with reporter configuration
@@ -55,15 +50,16 @@ public class dotTraceReporterConfigBuilder {
 
         List<ReportPattern> patterns = new Vector<ReportPattern>();
 
-        for (Map.Entry<String,ProfiledMethod> entry : ThresholdValues.entrySet()) {
+        for (Map.Entry<String,ProfiledMethod> entry : myThresholdValuesMap.entrySet()) {
             patterns.add(new ReportPattern());
-            patterns.get(patterns.size()-1).setPattern(entry.getValue().FQN);
-            myLogger.message("Add pattern: " + patterns.get(patterns.size() - 1).getPattern());
-            myLogger.message("from map: " + entry.getKey());
+            patterns.get(patterns.size()-1).setPattern(entry.getValue().getFQN());
         }
 
         ReportPatterns reportPatterns = new ReportPatterns();
         reportPatterns.setPatterns(patterns);
         converter.convertFromObjectToXML(reportPatterns, configPath);
+
+        // Return config - the map with threshold values set by user
+        return myThresholdValuesMap;
     }
 }

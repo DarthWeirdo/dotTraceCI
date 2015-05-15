@@ -1,12 +1,15 @@
 package com.dotTracePlugin.agent.runner;
 
+import com.dotTracePlugin.agent.model.ProfiledMethod;
 import com.dotTracePlugin.common.dotTraceRunnerConstants;
 import jetbrains.buildServer.RunBuildException;
+import jetbrains.buildServer.agent.BuildFinishedStatus;
 import jetbrains.buildServer.agent.runner.BuildServiceAdapter;
 import jetbrains.buildServer.agent.runner.ProgramCommandLine;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Vector;
@@ -15,18 +18,9 @@ import java.util.Vector;
  * Created by Alexey.Totin on 5/6/2015.
  */
 public class dotTraceBuildService extends BuildServiceAdapter {
+    private Map<String, ProfiledMethod> perfThresholds = new HashMap<String, ProfiledMethod>();
+    private Map<String, ProfiledMethod> perfResults = new HashMap<String, ProfiledMethod>();
 
-//    private final dotTraceReporterConfigBuilder myReporterConfigBuilder;
-//    private final Map<String, String> myRunParameters;
-
-    public dotTraceBuildService() {
-//        super();
-//        myRunParameters = getRunnerParameters();
-//        myReporterConfigBuilder =
-//                new dotTraceReporterConfigBuilder(myRunParameters.get(dotTraceRunnerConstants.PARAM_THRESHOLDS),
-//                        myRunParameters.get(dotTraceRunnerConstants.PARAM_DOTTRACE_PATH),
-//                        getLogger());
-    }
 
     @NotNull
     @Override
@@ -69,10 +63,33 @@ public class dotTraceBuildService extends BuildServiceAdapter {
                         runParameters.get(dotTraceRunnerConstants.PARAM_DOTTRACE_PATH),
                         getLogger());
         try {
-            reporterConfigBuilder.makeConfig();
+            perfThresholds = reporterConfigBuilder.makeConfig();
         } catch (IOException e) {
-            getLogger().message("Unable to create reporter config.");
+            getLogger().message("Unable to create reporter config file.");
             e.printStackTrace();
+        }
+    }
+
+    @NotNull
+    @Override
+    public BuildFinishedStatus getRunResult(final int exitCode) {
+        final Map<String, String> runParameters = getRunnerParameters();
+        final dotTraceReportReader resultsReader =
+                new dotTraceReportReader(runParameters.get(dotTraceRunnerConstants.PARAM_DOTTRACE_PATH), getLogger());
+
+        if (exitCode != 0) {
+            getLogger().message("Unable to finish the step.");
+            return BuildFinishedStatus.FINISHED_FAILED;
+        }
+        else {
+            try {
+                perfResults = resultsReader.readPerfResults();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            getLogger().message("SUCCESS! Profiled methods do not exceed specified thresholds.");
+            return BuildFinishedStatus.FINISHED_SUCCESS;
         }
     }
 }

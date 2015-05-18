@@ -11,7 +11,7 @@ import java.util.Vector;
 
 @XmlRootElement(name = "Report")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class ProfiledMethodList {
+public class ProfiledMethods {
 
     @XmlElement(name = "Function")
     private List<ProfiledMethod> methods = new ArrayList<ProfiledMethod>();

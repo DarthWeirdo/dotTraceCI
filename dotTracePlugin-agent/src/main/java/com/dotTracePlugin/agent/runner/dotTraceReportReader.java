@@ -1,8 +1,7 @@
 package com.dotTracePlugin.agent.runner;
 
 import com.dotTracePlugin.agent.model.ProfiledMethod;
-import com.dotTracePlugin.agent.model.ProfiledMethodList;
-import com.dotTracePlugin.agent.model.ReportPattern;
+import com.dotTracePlugin.agent.model.ProfiledMethods;
 import com.dotTracePlugin.agent.tools.XMLConverter;
 import com.dotTracePlugin.common.dotTraceRunnerConstants;
 import jetbrains.buildServer.agent.SimpleBuildLogger;
@@ -10,9 +9,7 @@ import jetbrains.buildServer.agent.SimpleBuildLogger;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.Vector;
 
 /**
  * Created by Alexey.Totin on 5/14/2015.
@@ -29,20 +26,21 @@ public class dotTraceReportReader {
 
 
     public Map<String, ProfiledMethod> readPerfResults() throws IOException {
-
+        Map<String, ProfiledMethod> result = new HashMap<String, ProfiledMethod>();
         XMLConverter converter = new XMLConverter();
         String resultsPath = new File(myDotTracePath, dotTraceRunnerConstants.DT_REPORTER_RESULTS).getPath();
         myLogger.message("Results report path: " + resultsPath);
 
         myLogger.message("Reading profiling results:");
-        ProfiledMethodList methodList =
+        ProfiledMethods methodList =
 //                converter.convertFromXMLToObject(resultsPath);
-                (ProfiledMethodList) converter.convertFromXMLToObject(resultsPath, ProfiledMethodList.class);
+                (ProfiledMethods) converter.convertFromXMLToObject(resultsPath, ProfiledMethods.class);
 
         for (ProfiledMethod method : methodList.getMethods()) {
+            result.put(method.getFQN(), method);
             myLogger.message(method.getFQN());
         }
 
-        return null;
+        return result;
     }
 }

@@ -1,5 +1,6 @@
 package com.dotTracePlugin.agent.runner;
 
+import com.dotTracePlugin.agent.model.CompareResult;
 import com.dotTracePlugin.agent.model.ProfiledMethod;
 import com.dotTracePlugin.common.dotTraceRunnerConstants;
 import jetbrains.buildServer.RunBuildException;
@@ -84,12 +85,20 @@ public class dotTraceBuildService extends BuildServiceAdapter {
         else {
             try {
                 perfResults = resultsReader.readPerfResults();
+                dotTraceComparer comparer = new dotTraceComparer(perfThresholds, perfResults);
+
+                if (comparer.isSuccessful()) {
+                    getLogger().message("SUCCESS! Profiled methods do not exceed specified thresholds.");
+                    return BuildFinishedStatus.FINISHED_SUCCESS;
+                } else {
+                    getLogger().message("FAILED! Some of the specified thresholds were exceeded.");
+                    return BuildFinishedStatus.FINISHED_FAILED;
+                }
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
-            getLogger().message("SUCCESS! Profiled methods do not exceed specified thresholds.");
-            return BuildFinishedStatus.FINISHED_SUCCESS;
         }
+        return BuildFinishedStatus.FINISHED_SUCCESS;
     }
 }

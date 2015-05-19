@@ -68,12 +68,12 @@
       <file leaf-file-name="dotTraceComparer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/runner/dotTraceComparer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6968504">
-              <caret line="97" column="36" selection-start-line="97" selection-start-column="13" selection-end-line="97" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.22047244">
+              <caret line="60" column="44" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4426#4427#0" expanded="true" />
-                <element signature="e#4461#4462#0" expanded="true" />
+                <element signature="e#4516#4517#0" expanded="true" />
+                <element signature="e#4551#4552#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -839,12 +839,12 @@
       <workItem from="1431346632376" duration="7820000" />
       <workItem from="1431504741417" duration="63214000" />
       <workItem from="1432018373608" duration="882000" />
-      <workItem from="1432019444477" duration="8223000" />
+      <workItem from="1432019444477" duration="9174000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104028000" />
+    <option name="totallyTimeSpent" value="104979000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
@@ -1334,12 +1334,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/runner/dotTraceComparer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6968504">
-          <caret line="97" column="36" selection-start-line="97" selection-start-column="13" selection-end-line="97" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.22047244">
+          <caret line="60" column="44" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4426#4427#0" expanded="true" />
-            <element signature="e#4461#4462#0" expanded="true" />
+            <element signature="e#4516#4517#0" expanded="true" />
+            <element signature="e#4551#4552#0" expanded="true" />
           </folding>
         </state>
       </provider>

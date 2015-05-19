@@ -57,6 +57,8 @@ public class dotTraceComparer {
     public String getComparisonAsString(){
         StringBuilder result = new StringBuilder();
         String line;
+        result.append("Profiling results: \n");
+
         for (Map.Entry<String,CompareResult> entry : myDiff.entrySet()) {
             if (entry.getValue().isSuccessful())
                 result.append("PASSED: ");
@@ -70,7 +72,7 @@ public class dotTraceComparer {
                         entry.getValue().getBaseTotalTime(), entry.getValue().getReportTotalTime(),
                         entry.getValue().getDiffTotalTime());
                 result.append(line);
-                result.append("\n");
+                result.append("\n\t");
             }
 
             if (entry.getValue().getBaseOwnTime() != 0){
@@ -78,7 +80,7 @@ public class dotTraceComparer {
                         entry.getValue().getBaseOwnTime(), entry.getValue().getReportOwnTime(),
                         entry.getValue().getDiffOwnTime());
                 result.append(line);
-                result.append("\n");
+                result.append("\n\t");
             }
 
             if (entry.getValue().getBaseCalls() != 0){
@@ -86,7 +88,7 @@ public class dotTraceComparer {
                         entry.getValue().getBaseCalls(), entry.getValue().getReportCalls(),
                         entry.getValue().getDiffCalls());
                 result.append(line);
-                result.append("\n");
+                result.append("\n\t");
             }
 
             if (entry.getValue().getBaseInstances() != 0){
@@ -94,8 +96,9 @@ public class dotTraceComparer {
                         entry.getValue().getBaseInstances(), entry.getValue().getReportInstances(),
                         entry.getValue().getDiffInstances());
                 result.append(line);
-                result.append("\n");
+                result.append("\n\t");
             }
+            result.append("\n");
         }
 
         return result.toString();

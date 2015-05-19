@@ -2,6 +2,7 @@ package com.dotTracePlugin.agent.runner;
 
 import com.dotTracePlugin.agent.model.CompareResult;
 import com.dotTracePlugin.agent.model.ProfiledMethod;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -38,16 +39,66 @@ public class dotTraceComparer {
                 int baseInstances = Integer.parseInt(currentBaseMethod.getInstances());
                 int reportInstances = Integer.parseInt(currentReportMethod.getInstances());
 
-                CompareResult currentResult = new CompareResult(currentKey, baseTotalTime, reportTotalTime, baseOwnTime, reportOwnTime, baseCalls, reportCalls, baseInstances, reportInstances);
-                if (currentResult.isSuccessful()) this.isSuccessful = false;
+                CompareResult currentResult = new CompareResult(currentKey, baseTotalTime, reportTotalTime,
+                        baseOwnTime, reportOwnTime, baseCalls, reportCalls, baseInstances, reportInstances);
+                this.isSuccessful = currentResult.isSuccessful();
                 myDiff.put(currentKey, currentResult);
             }
         }
 
     }
 
+    @NotNull
     public Map <String, CompareResult> getComparisonAsMap(){
         return myDiff;
+    }
+
+    @NotNull
+    public String getComparisonAsString(){
+        StringBuilder result = new StringBuilder();
+        String line;
+        for (Map.Entry<String,CompareResult> entry : myDiff.entrySet()) {
+            if (entry.getValue().isSuccessful())
+                result.append("PASSED: ");
+            else result.append("FAILED: ");
+
+            result.append(entry.getValue().getFQN());
+            result.append("\n\t");
+
+            if (entry.getValue().getBaseTotalTime() != 0){
+                line = String.format("Total time, ms [expected %d | measured %d | delta %d]",
+                        entry.getValue().getBaseTotalTime(), entry.getValue().getReportTotalTime(),
+                        entry.getValue().getDiffTotalTime());
+                result.append(line);
+                result.append("\n");
+            }
+
+            if (entry.getValue().getBaseOwnTime() != 0){
+                line = String.format("Own time, ms [expected %d | measured %d | delta %d]",
+                        entry.getValue().getBaseOwnTime(), entry.getValue().getReportOwnTime(),
+                        entry.getValue().getDiffOwnTime());
+                result.append(line);
+                result.append("\n");
+            }
+
+            if (entry.getValue().getBaseCalls() != 0){
+                line = String.format("Calls [expected %d | measured %d | delta %d]",
+                        entry.getValue().getBaseCalls(), entry.getValue().getReportCalls(),
+                        entry.getValue().getDiffCalls());
+                result.append(line);
+                result.append("\n");
+            }
+
+            if (entry.getValue().getBaseInstances() != 0){
+                line = String.format("Instances [expected %d | measured %d | delta %d]",
+                        entry.getValue().getBaseInstances(), entry.getValue().getReportInstances(),
+                        entry.getValue().getDiffInstances());
+                result.append(line);
+                result.append("\n");
+            }
+        }
+
+        return result.toString();
     }
 
     public boolean isSuccessful() {

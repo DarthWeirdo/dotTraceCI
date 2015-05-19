@@ -25,7 +25,9 @@ public class CompareResult {
 
     private boolean isSuccessful = true;
 
-    public CompareResult(String fqn, int baseTotalTime, int reportTotalTime, int baseOwnTime, int reportOwnTime, int baseCalls, int reportCalls, int baseInstances, int reportInstances){
+    public CompareResult(String fqn, int baseTotalTime, int reportTotalTime, int baseOwnTime,
+                         int reportOwnTime, int baseCalls, int reportCalls, int baseInstances,
+                         int reportInstances){
         FQN = fqn;
         this.baseTotalTime = baseTotalTime;
         this.reportTotalTime = reportTotalTime;

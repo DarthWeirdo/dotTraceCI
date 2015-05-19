@@ -66,7 +66,7 @@ public class dotTraceBuildService extends BuildServiceAdapter {
         try {
             perfThresholds = reporterConfigBuilder.makeConfig();
         } catch (IOException e) {
-            getLogger().message("Unable to create reporter config file.");
+            getLogger().message("Unable to create reporter config file");
             e.printStackTrace();
         }
     }
@@ -79,19 +79,21 @@ public class dotTraceBuildService extends BuildServiceAdapter {
                 new dotTraceReportReader(runParameters.get(dotTraceRunnerConstants.PARAM_DOTTRACE_PATH), getLogger());
 
         if (exitCode != 0) {
-            getLogger().message("Unable to finish the step.");
-            return BuildFinishedStatus.FINISHED_FAILED;
+            getLogger().message("dotTrace plugin was unable to finish some of the steps. See agent log for details");
+            return BuildFinishedStatus.FINISHED_WITH_PROBLEMS;
         }
         else {
             try {
                 perfResults = resultsReader.readPerfResults();
                 dotTraceComparer comparer = new dotTraceComparer(perfThresholds, perfResults);
 
+                getLogger().message(comparer.getComparisonAsString());
+
                 if (comparer.isSuccessful()) {
-                    getLogger().message("SUCCESS! Profiled methods do not exceed specified thresholds.");
+                    getLogger().message("SUCCESS! Profiled methods do not exceed specified thresholds");
                     return BuildFinishedStatus.FINISHED_SUCCESS;
                 } else {
-                    getLogger().message("FAILED! Some of the specified thresholds were exceeded.");
+                    getLogger().message("FAILED! Some of the specified thresholds were exceeded");
                     return BuildFinishedStatus.FINISHED_FAILED;
                 }
 
@@ -99,6 +101,8 @@ public class dotTraceBuildService extends BuildServiceAdapter {
                 e.printStackTrace();
             }
         }
-        return BuildFinishedStatus.FINISHED_SUCCESS;
+
+        getLogger().message("dotTrace plugin was unable to finish some of the steps. See agent log for details");
+        return BuildFinishedStatus.FINISHED_WITH_PROBLEMS;
     }
 }

@@ -29,16 +29,14 @@ public class dotTraceReportReader {
         Map<String, ProfiledMethod> result = new HashMap<String, ProfiledMethod>();
         XMLConverter converter = new XMLConverter();
         String resultsPath = new File(myDotTracePath, dotTraceRunnerConstants.DT_REPORTER_RESULTS).getPath();
-        myLogger.message("Results report path: " + resultsPath);
 
-        myLogger.message("Reading profiling results:");
+        myLogger.message("Reading profiling results...");
         ProfiledMethods methodList =
 //                converter.convertFromXMLToObject(resultsPath);
                 (ProfiledMethods) converter.convertFromXMLToObject(resultsPath, ProfiledMethods.class);
 
         for (ProfiledMethod method : methodList.getMethods()) {
             result.put(method.getFQN(), method);
-            myLogger.message(method.getFQN());
         }
 
         return result;

@@ -1,3 +1,4 @@
 com\dotTracePlugin\server\dotTraceRunType.class
-com\dotTracePlugin\server\dotTraceRunType$1.class
+com\dotTracePlugin\server\dotTraceStatisticValueTranslator.class
 com\dotTracePlugin\server\dotTracePropertiesProcessor.class
+com\dotTracePlugin\server\dotTraceRunType$1.class

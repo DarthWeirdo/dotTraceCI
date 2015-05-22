@@ -2,4 +2,5 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
 <beans default-autowire="constructor">
     <bean id="dotTraceRunType" class="com.dotTracePlugin.server.dotTraceRunType"/>
+    <bean id="dotTraceStatisticvalueTranslator" class="com.dotTracePlugin.server.dotTraceStatisticValueTranslator"/>
 </beans>

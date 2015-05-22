@@ -8,5 +8,13 @@
 </div>
 
 <div class="parameter">
+    Profiling config file path: <strong><props:displayValue name="<%=dotTraceRunnerConstants.PARAM_PROFILING_CONFIG_PATH%>" emptyValue="default"/></strong>
+</div>
+
+<div class="parameter">
+    Temp directory path: <strong><props:displayValue name="<%=dotTraceRunnerConstants.PARAM_TEMP_PATH%>" emptyValue="default"/></strong>
+</div>
+
+<div class="parameter">
     Threshold values: <strong><props:displayValue name="<%=dotTraceRunnerConstants.PARAM_THRESHOLDS%>" emptyValue="default"/></strong>
 </div>

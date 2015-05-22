@@ -29,10 +29,10 @@ public class dotTraceReporterConfigBuilder {
         myLogger = logger;
     }
 
-    public Map<String, ProfiledMethod> makeConfig() throws IOException {
+    public void makeConfig() throws IOException {
 
         // Parse threshold values string
-        myLogger.message("Parsing threshold values..." + myThresholdValuesString);
+        myLogger.message("Parsing threshold values...");
         String[] lines = myThresholdValuesString.split("\\r?\\n");
 
         for (String line : lines) {
@@ -46,7 +46,6 @@ public class dotTraceReporterConfigBuilder {
         myLogger.message("Generating XML report configuration...");
         XMLConverter converter = new XMLConverter();
         String configPath = new File(myDotTracePath, dotTraceRunnerConstants.DT_REPORTER_CONFIG).getPath();
-        myLogger.message("Report config path: " + configPath);
 
         List<ReportPattern> patterns = new Vector<ReportPattern>();
 
@@ -60,6 +59,9 @@ public class dotTraceReporterConfigBuilder {
         converter.convertFromObjectToXML(reportPatterns, configPath);
 
         // Return config - the map with threshold values set by user
+    }
+
+    public Map<String, ProfiledMethod> getTresholdValues(){
         return myThresholdValuesMap;
     }
 }

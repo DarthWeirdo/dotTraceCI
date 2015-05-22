@@ -8,6 +8,7 @@ com\dotTracePlugin\agent\tools\XMLConverter.class
 com\dotTracePlugin\agent\runner\dotTraceReporterConfigBuilder.class
 com\dotTracePlugin\agent\model\ReportPatterns.class
 com\dotTracePlugin\agent\runner\dotTraceBuildService.class
+com\dotTracePlugin\agent\runner\dotTraceScriptBuilder.class
 com\dotTracePlugin\agent\runner\dotTraceBuildService$1.class
 com\dotTracePlugin\agent\model\CompareResult.class
 com\dotTracePlugin\agent\runner\dotTraceComparer.class

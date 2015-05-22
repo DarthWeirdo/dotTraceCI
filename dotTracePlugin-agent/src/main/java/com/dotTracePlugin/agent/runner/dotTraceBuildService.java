@@ -7,6 +7,7 @@ import jetbrains.buildServer.RunBuildException;
 import jetbrains.buildServer.agent.BuildFinishedStatus;
 import jetbrains.buildServer.agent.runner.BuildServiceAdapter;
 import jetbrains.buildServer.agent.runner.ProgramCommandLine;
+import jetbrains.buildServer.messages.DefaultMessagesInfo;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
@@ -30,6 +31,8 @@ public class dotTraceBuildService extends BuildServiceAdapter {
         final String dotTracePath = runParameters.get(dotTraceRunnerConstants.PARAM_DOTTRACE_PATH);
         final dotTraceProfilerCommandLineBuilder profilerCmdBuilder =
                 new dotTraceProfilerCommandLineBuilder(runParameters, getLogger());
+
+
 
         return new ProgramCommandLine() {
             @NotNull
@@ -64,7 +67,8 @@ public class dotTraceBuildService extends BuildServiceAdapter {
                         runParameters.get(dotTraceRunnerConstants.PARAM_DOTTRACE_PATH),
                         getLogger());
         try {
-            perfThresholds = reporterConfigBuilder.makeConfig();
+            reporterConfigBuilder.makeConfig();
+            perfThresholds = reporterConfigBuilder.getTresholdValues();
         } catch (IOException e) {
             getLogger().message("Unable to create reporter config file");
             e.printStackTrace();
@@ -88,6 +92,10 @@ public class dotTraceBuildService extends BuildServiceAdapter {
                 dotTraceComparer comparer = new dotTraceComparer(perfThresholds, perfResults);
 
                 getLogger().message(comparer.getComparisonAsString());
+//                getLogger().message(comparer.getComparisonAsServiceMessage());
+                getLogger().logMessage(DefaultMessagesInfo.createTextMessage(
+                        comparer.getComparisonAsServiceMessage())
+                        .updateTags(DefaultMessagesInfo.TAG_INTERNAL));
 
                 if (comparer.isSuccessful()) {
                     getLogger().message("SUCCESS! Profiled methods do not exceed specified thresholds");

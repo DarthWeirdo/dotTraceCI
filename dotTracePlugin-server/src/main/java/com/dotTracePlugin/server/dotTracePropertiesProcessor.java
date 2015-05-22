@@ -18,8 +18,17 @@ public class dotTracePropertiesProcessor implements PropertiesProcessor {
     public Collection<InvalidProperty> process(Map<String, String> properties) {
         Collection<InvalidProperty> result = new HashSet<InvalidProperty>();
         if (StringUtil.isEmptyOrSpaces(properties.get(dotTraceRunnerConstants.PARAM_DOTTRACE_PATH))) {
-            result.add(new InvalidProperty(dotTraceRunnerConstants.PARAM_DOTTRACE_PATH, "The path must be specified."));
+            result.add(new InvalidProperty(dotTraceRunnerConstants.PARAM_DOTTRACE_PATH, "The path must be specified"));
         }
+
+        if (StringUtil.isEmptyOrSpaces(properties.get(dotTraceRunnerConstants.PARAM_PROFILING_CONFIG_PATH))) {
+            result.add(new InvalidProperty(dotTraceRunnerConstants.PARAM_PROFILING_CONFIG_PATH, "The path must be specified"));
+        }
+
+        if (StringUtil.isEmptyOrSpaces(properties.get(dotTraceRunnerConstants.PARAM_TEMP_PATH))) {
+            result.add(new InvalidProperty(dotTraceRunnerConstants.PARAM_TEMP_PATH, "The path must be specified"));
+        }
+
         return result;
     }
 }

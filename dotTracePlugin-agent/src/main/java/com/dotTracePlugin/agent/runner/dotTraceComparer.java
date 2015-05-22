@@ -2,6 +2,7 @@ package com.dotTracePlugin.agent.runner;
 
 import com.dotTracePlugin.agent.model.CompareResult;
 import com.dotTracePlugin.agent.model.ProfiledMethod;
+import com.dotTracePlugin.common.dotTraceRunnerConstants;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
@@ -20,10 +21,6 @@ public class dotTraceComparer {
     public dotTraceComparer(Map<String, ProfiledMethod> baseValues, Map<String, ProfiledMethod> reportValues) {
         this.myBaseValues = baseValues;
         this.myReportValues = reportValues;
-        Compare();
-    }
-
-    private void Compare(){
         for (Map.Entry<String,ProfiledMethod> entry : myBaseValues.entrySet()) {
             String currentKey = entry.getKey();
             if (myReportValues.containsKey(currentKey)){
@@ -45,7 +42,6 @@ public class dotTraceComparer {
                 myDiff.put(currentKey, currentResult);
             }
         }
-
     }
 
     @NotNull
@@ -99,6 +95,64 @@ public class dotTraceComparer {
                 result.append("\n\t");
             }
             result.append("\n");
+        }
+
+        return result.toString();
+    }
+
+    @NotNull
+    public String getComparisonAsServiceMessage(){
+        StringBuilder result = new StringBuilder();
+
+        for (Map.Entry<String,CompareResult> entry : myDiff.entrySet()) {
+
+            if (entry.getValue().getBaseTotalTime() != 0){
+                result.append(String.format(
+                        "##teamcity[%s key='%s:baseTotalTime' value='%d'] \n",
+                        dotTraceRunnerConstants.DT_SERVICE_MESSAGE_NAME,
+                        entry.getValue().getFQN(), entry.getValue().getBaseTotalTime()));
+
+                result.append(String.format(
+                        "##teamcity[%s key='%s:reportTotalTime' value='%d'] \n",
+                        dotTraceRunnerConstants.DT_SERVICE_MESSAGE_NAME,
+                        entry.getValue().getFQN(), entry.getValue().getReportTotalTime()));
+            }
+
+            if (entry.getValue().getBaseOwnTime() != 0){
+                result.append(String.format(
+                        "##teamcity[%s key='%s:baseOwnTime' value='%d'] \n",
+                        dotTraceRunnerConstants.DT_SERVICE_MESSAGE_NAME,
+                        entry.getValue().getFQN(), entry.getValue().getBaseOwnTime()));
+
+                result.append(String.format(
+                        "##teamcity[%s key='%s:reportOwnTime' value='%d'] \n",
+                        dotTraceRunnerConstants.DT_SERVICE_MESSAGE_NAME,
+                        entry.getValue().getFQN(), entry.getValue().getReportOwnTime()));
+            }
+
+            if (entry.getValue().getBaseCalls() != 0){
+                result.append(String.format(
+                        "##teamcity[%s key='%s:baseCalls' value='%d'] \n",
+                        dotTraceRunnerConstants.DT_SERVICE_MESSAGE_NAME,
+                        entry.getValue().getFQN(), entry.getValue().getBaseCalls()));
+
+                result.append(String.format(
+                        "##teamcity[%s key='%s:reportCalls' value='%d'] \n",
+                        dotTraceRunnerConstants.DT_SERVICE_MESSAGE_NAME,
+                        entry.getValue().getFQN(), entry.getValue().getReportCalls()));
+            }
+
+            if (entry.getValue().getBaseInstances() != 0){
+                result.append(String.format(
+                        "##teamcity[%s key='%s:baseInstances' value='%d'] \n",
+                        dotTraceRunnerConstants.DT_SERVICE_MESSAGE_NAME,
+                        entry.getValue().getFQN(), entry.getValue().getBaseTotalTime()));
+
+                result.append(String.format(
+                        "##teamcity[%s key='%s:reportInstances' value='%d'] \n",
+                        dotTraceRunnerConstants.DT_SERVICE_MESSAGE_NAME,
+                        entry.getValue().getFQN(), entry.getValue().getReportInstances()));
+            }
         }
 
         return result.toString();

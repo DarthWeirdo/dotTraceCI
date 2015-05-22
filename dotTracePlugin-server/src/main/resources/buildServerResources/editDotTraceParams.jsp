@@ -13,6 +13,20 @@
             <span class="smallNote">Enter local path (for a particular agent) to the dotTrace directory</span>
         </td>
     </tr>
+    <tr>
+        <th><label for="com.dotTracePlugin.common.ProfilingConfigPath">Profiling config file path: <l:star/></label></th>
+        <td>
+            <props:textProperty name="<%=dotTraceRunnerConstants.PARAM_PROFILING_CONFIG_PATH%>" className="longField" maxlength="1024" />
+            <span class="smallNote">Enter local path (for a particular agent) to the file with profiling configuration</span>
+        </td>
+    </tr>
+    <tr>
+        <th><label for="com.dotTracePlugin.common.TempPath">Temp directory path: <l:star/></label></th>
+        <td>
+            <props:textProperty name="<%=dotTraceRunnerConstants.PARAM_TEMP_PATH%>" className="longField" maxlength="1024" />
+            <span class="smallNote">Enter local path (for a particular agent) to the temporary directory for storing performance snapshots</span>
+        </td>
+    </tr>
 </l:settingsGroup>
 
 <l:settingsGroup title="Performance Thresholds">

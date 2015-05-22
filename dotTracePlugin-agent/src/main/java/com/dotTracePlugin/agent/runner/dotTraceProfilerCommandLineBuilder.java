@@ -4,7 +4,6 @@ import com.dotTracePlugin.common.dotTraceRunnerConstants;
 import com.intellij.openapi.util.text.StringUtil;
 import jetbrains.buildServer.RunBuildException;
 import jetbrains.buildServer.agent.SimpleBuildLogger;
-import jetbrains.buildServer.util.StringUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -18,10 +17,13 @@ import java.util.Vector;
 public class dotTraceProfilerCommandLineBuilder {
     private final Map<String, String> myRunParameters;
     private final SimpleBuildLogger myLogger;
+    private final dotTraceScriptBuilder myScriptBuilder;
 
     public dotTraceProfilerCommandLineBuilder(final Map<String, String> runParameters, SimpleBuildLogger logger) {
         myRunParameters = runParameters;
         myLogger = logger;
+        myScriptBuilder = new dotTraceScriptBuilder(myRunParameters);
+        myScriptBuilder.saveRunScriptToDisk();
     }
 
     @NotNull

@@ -4,6 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="forms" tagdir="/WEB-INF/tags/forms" %>
 <%@ taglib prefix="bs" tagdir="/WEB-INF/tags" %>
+<jsp:useBean id="runnerConst" scope="request" class="com.dotTracePlugin.common.dotTraceRunnerConstants"/>
 
 <l:settingsGroup title="Profiling Options">
     <tr>
@@ -46,6 +47,18 @@
                 <br/><b>IntegrationTests.MainTests.Test1 100 0 0 0</b>
                 <br/>
             </span>
+        </td>
+    </tr>
+
+    <tr>
+        <th><label for="com.dotTracePlugin.OnExcThresholds">On exceeding thresholds: </label></th>
+        <td>
+            <props:selectProperty name="<%=dotTraceRunnerConstants.PARAM_ON_EXC_THRESHOLDS%>">
+                <c:forEach var="type" items="${runnerConst.onExcThresholdsTypeValues}">
+                    <props:option value="${type.key}"><c:out value="${type.value}"/></props:option>
+                </c:forEach>
+            </props:selectProperty>
+            <%--<span class="smallNote">Select SSH transfer protocol to use</span>--%>
         </td>
     </tr>
 </l:settingsGroup>

@@ -16,7 +16,6 @@ import java.util.Map;
  */
 public class dotTraceReportReader {
     private String myDotTracePath;
-    private Map<String, ProfiledMethod> myThresholdValuesMap = new HashMap<String, ProfiledMethod>();;
     private SimpleBuildLogger myLogger;
 
     public dotTraceReportReader(String dotTracePath, SimpleBuildLogger logger) {
@@ -32,7 +31,6 @@ public class dotTraceReportReader {
 
         myLogger.message("Reading profiling results...");
         ProfiledMethods methodList =
-//                converter.convertFromXMLToObject(resultsPath);
                 (ProfiledMethods) converter.convertFromXMLToObject(resultsPath, ProfiledMethods.class);
 
         for (ProfiledMethod method : methodList.getMethods()) {

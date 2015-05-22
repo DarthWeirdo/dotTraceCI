@@ -57,8 +57,6 @@ public class dotTraceReporterConfigBuilder {
         ReportPatterns reportPatterns = new ReportPatterns();
         reportPatterns.setPatterns(patterns);
         converter.convertFromObjectToXML(reportPatterns, configPath);
-
-        // Return config - the map with threshold values set by user
     }
 
     public Map<String, ProfiledMethod> getTresholdValues(){

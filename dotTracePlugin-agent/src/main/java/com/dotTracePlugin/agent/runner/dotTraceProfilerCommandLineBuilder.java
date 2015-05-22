@@ -23,7 +23,7 @@ public class dotTraceProfilerCommandLineBuilder {
         myRunParameters = runParameters;
         myLogger = logger;
         myScriptBuilder = new dotTraceScriptBuilder(myRunParameters);
-        myScriptBuilder.saveRunScriptToDisk();
+        myScriptBuilder.saveScriptToDisk();
     }
 
     @NotNull

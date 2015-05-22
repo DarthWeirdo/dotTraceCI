@@ -34,18 +34,13 @@ public class XMLConverter {
 
 
     public Object convertFromXMLToObject(String xmlFile, Class objClass) throws IOException {
-//    public ProfiledMethods convertFromXMLToObject(String xmlFile) throws IOException {
-
         JAXBContext context = null;
         File file = new File(xmlFile);
 
         try {
-//            context = JAXBContext.newInstance(ProfiledMethods.class);
             context = JAXBContext.newInstance(objClass);
             Unmarshaller um = context.createUnmarshaller();
             return objClass.cast(um.unmarshal(file));
-//            return (ProfiledMethods) um.unmarshal(file);
-
         } catch (JAXBException e) {
             e.printStackTrace();
         }

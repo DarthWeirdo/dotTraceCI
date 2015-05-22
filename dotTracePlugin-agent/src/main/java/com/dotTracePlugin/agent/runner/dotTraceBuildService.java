@@ -82,6 +82,12 @@ public class dotTraceBuildService extends BuildServiceAdapter {
         final dotTraceReportReader resultsReader =
                 new dotTraceReportReader(runParameters.get(dotTraceRunnerConstants.PARAM_DOTTRACE_PATH), getLogger());
 
+        BuildFinishedStatus onExcThrResult = BuildFinishedStatus.FINISHED_FAILED;
+        final String onExcThr = runParameters.get(dotTraceRunnerConstants.PARAM_ON_EXC_THRESHOLDS);
+        if (dotTraceRunnerConstants.ON_EXC_PROBLEMS.equals(onExcThr))
+            onExcThrResult = BuildFinishedStatus.FINISHED_WITH_PROBLEMS;
+
+
         if (exitCode != 0) {
             getLogger().message("dotTrace plugin was unable to finish some of the steps. See agent log for details");
             return BuildFinishedStatus.FINISHED_WITH_PROBLEMS;
@@ -102,7 +108,7 @@ public class dotTraceBuildService extends BuildServiceAdapter {
                     return BuildFinishedStatus.FINISHED_SUCCESS;
                 } else {
                     getLogger().message("FAILED! Some of the specified thresholds were exceeded");
-                    return BuildFinishedStatus.FINISHED_FAILED;
+                    return onExcThrResult;
                 }
 
             } catch (IOException e) {

@@ -36,7 +36,7 @@ public class dotTraceScriptBuilder {
         myScript.append(scriptLine);
     }
 
-    public void saveRunScriptToDisk() {
+    public void saveScriptToDisk() {
         String dotTraceRelativePath = myRunParameters.get(dotTraceRunnerConstants.PARAM_DOTTRACE_PATH);
         String scriptPath = new File(dotTraceRelativePath, dotTraceRunnerConstants.DT_RUN_SCRIPT).getPath();
 

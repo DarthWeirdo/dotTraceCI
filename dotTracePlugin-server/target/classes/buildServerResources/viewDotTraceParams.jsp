@@ -23,3 +23,7 @@
 <div class="parameter">
     On exceeding thresholds: <strong><c:forEach var="type" items="${runnerConst.onExcThresholdsTypeValues}"><c:if test="${type.key == propertiesBean.properties[runnerConst.onExcThresholdsType]}"><c:out value="${type.value}"/></c:if></c:forEach></strong>
 </div>
+
+<div class="parameter">
+    Publish performance snapshot to artifacts: <strong><c:forEach var="type" items="${runnerConst.publishSnapshotTypeValues}"><c:if test="${type.key == propertiesBean.properties[runnerConst.publishSnapshotType]}"><c:out value="${type.value}"/></c:if></c:forEach></strong>
+</div>

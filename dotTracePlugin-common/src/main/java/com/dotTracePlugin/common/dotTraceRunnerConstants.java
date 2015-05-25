@@ -21,6 +21,10 @@ public class dotTraceRunnerConstants {
     public static final String PARAM_ON_EXC_THRESHOLDS = "com.dotTracePlugin.OnExcThresholds";
     public static final String ON_EXC_FAIL = "com.dotTracePlugin.OnExcThresholds.OnExcFail";
     public static final String ON_EXC_PROBLEMS = "com.dotTracePlugin.OnExcThresholds.OnExcProblems";
+    public static final String PARAM_PUBLISH_SNAPSHOT = "com.dotTracePlugin.PublishSnapshot";
+    public static final String ALWAYS = "com.dotTracePlugin.PublishSnapshot.Always";
+    public static final String EXC_THRESHOLDS = "com.dotTracePlugin.PublishSnapshot.ExcThresholds";
+    public static final String NEVER = "com.dotTracePlugin.PublishSnapshot.Never";
 
 
 
@@ -32,6 +36,18 @@ public class dotTraceRunnerConstants {
         final Map<String, String> result = new LinkedHashMap<String, String>();
         result.put(ON_EXC_FAIL, "Fail build");
         result.put(ON_EXC_PROBLEMS, "Finish build with problems");
+        return result;
+    }
+
+    public String getPublishSnapshotType() {
+        return PARAM_PUBLISH_SNAPSHOT;
+    }
+
+    public Map<String, String> getPublishSnapshotTypeValues() {
+        final Map<String, String> result = new LinkedHashMap<String, String>();
+        result.put(ALWAYS, "Always");
+        result.put(EXC_THRESHOLDS, "On exceeding thresholds");
+        result.put(NEVER, "Never");
         return result;
     }
 }

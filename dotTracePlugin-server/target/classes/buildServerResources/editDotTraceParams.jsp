@@ -61,4 +61,16 @@
             <%--<span class="smallNote">Select SSH transfer protocol to use</span>--%>
         </td>
     </tr>
+
+    <tr>
+        <th><label for="com.dotTracePlugin.PublishSnapshots">Publish performance snapshot to artifacts: </label></th>
+        <td>
+            <props:selectProperty name="<%=dotTraceRunnerConstants.PARAM_PUBLISH_SNAPSHOT%>">
+                <c:forEach var="type" items="${runnerConst.publishSnapshotTypeValues}">
+                    <props:option value="${type.key}"><c:out value="${type.value}"/></props:option>
+                </c:forEach>
+            </props:selectProperty>
+                <%--<span class="smallNote">Select SSH transfer protocol to use</span>--%>
+        </td>
+    </tr>
 </l:settingsGroup>

@@ -10,6 +10,7 @@ import jetbrains.buildServer.agent.runner.ProgramCommandLine;
 import jetbrains.buildServer.messages.DefaultMessagesInfo;
 import org.jetbrains.annotations.NotNull;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
@@ -78,6 +79,7 @@ public class dotTraceBuildService extends BuildServiceAdapter {
     @NotNull
     @Override
     public BuildFinishedStatus getRunResult(final int exitCode) {
+
         final Map<String, String> runParameters = getRunnerParameters();
         final dotTraceReportReader resultsReader =
                 new dotTraceReportReader(runParameters.get(dotTraceRunnerConstants.PARAM_DOTTRACE_PATH), getLogger());
@@ -86,6 +88,12 @@ public class dotTraceBuildService extends BuildServiceAdapter {
         final String onExcThr = runParameters.get(dotTraceRunnerConstants.PARAM_ON_EXC_THRESHOLDS);
         if (dotTraceRunnerConstants.ON_EXC_PROBLEMS.equals(onExcThr))
             onExcThrResult = BuildFinishedStatus.FINISHED_WITH_PROBLEMS;
+
+        // TODO: publishing artifacts
+        String publishSnapshotMsg = String.format("##teamcity[publishArtifacts '%s* => dotTraceSnapshot/']",
+                new File(runParameters.get(dotTraceRunnerConstants.PARAM_TEMP_PATH),
+                        dotTraceRunnerConstants.DT_SNAPSHOT).getPath());
+        final String publishSnapshot = runParameters.get(dotTraceRunnerConstants.PARAM_PUBLISH_SNAPSHOT);
 
 
         if (exitCode != 0) {
@@ -98,16 +106,28 @@ public class dotTraceBuildService extends BuildServiceAdapter {
                 dotTraceComparer comparer = new dotTraceComparer(perfThresholds, perfResults);
 
                 getLogger().message(comparer.getComparisonAsString());
-//                getLogger().message(comparer.getComparisonAsServiceMessage());
                 getLogger().logMessage(DefaultMessagesInfo.createTextMessage(
                         comparer.getComparisonAsServiceMessage())
                         .updateTags(DefaultMessagesInfo.TAG_INTERNAL));
 
                 if (comparer.isSuccessful()) {
                     getLogger().message("SUCCESS! Profiled methods do not exceed specified thresholds");
+
+                    // Publishing snapshot to artifacts
+                    if (dotTraceRunnerConstants.ALWAYS.equals(publishSnapshot))
+                        getLogger().logMessage(DefaultMessagesInfo.createTextMessage(
+                            publishSnapshotMsg).updateTags(DefaultMessagesInfo.TAG_INTERNAL));
+
                     return BuildFinishedStatus.FINISHED_SUCCESS;
                 } else {
+
                     getLogger().message("FAILED! Some of the specified thresholds were exceeded");
+
+                    // Publishing snapshot to artifacts
+                    if (dotTraceRunnerConstants.EXC_THRESHOLDS.equals(publishSnapshot))
+                        getLogger().logMessage(DefaultMessagesInfo.createTextMessage(
+                            publishSnapshotMsg).updateTags(DefaultMessagesInfo.TAG_INTERNAL));
+
                     return onExcThrResult;
                 }
 

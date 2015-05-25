@@ -78,6 +78,9 @@ public class dotTraceRunType extends RunType {
     @NotNull
     @Override
     public String describeParameters(@NotNull Map<String, String> parameters) {
-        return "dotTrace path: " + parameters.get(dotTraceRunnerConstants.PARAM_DOTTRACE_PATH);
+        StringBuilder sb = new StringBuilder();
+        sb.append("dotTrace path: " + parameters.get(dotTraceRunnerConstants.PARAM_DOTTRACE_PATH)).append("\n");
+        sb.append("Profiling config path:" + parameters.get(dotTraceRunnerConstants.PARAM_PROFILING_CONFIG_PATH));
+        return sb.toString();
     }
 }

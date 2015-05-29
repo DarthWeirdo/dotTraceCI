@@ -18,7 +18,11 @@
         <th><label for="com.dotTracePlugin.common.ProfilingConfigPath">Profiling config file path: <l:star/></label></th>
         <td>
             <props:textProperty name="<%=dotTraceRunnerConstants.PARAM_PROFILING_CONFIG_PATH%>" className="longField" maxlength="1024" />
-            <span class="smallNote">Enter local path (for a particular agent) to the file with profiling configuration</span>
+            <span class="smallNote">Enter local path (for a particular agent) to the file with profiling configuration <br/>
+            Use the <b>Configuration2Xml</b> tool to create the configuration. When specifying the profiling target path, use
+                the <b>%CHECKOUTDIR%</b> placeholder. The plugin will automatically replace the placeholder with a
+                proper path to the project's checkout directory on the agent.
+            </span>
         </td>
     </tr>
     <tr>
@@ -36,15 +40,13 @@
         <td>
             <props:multilineProperty name="<%=dotTraceRunnerConstants.PARAM_THRESHOLDS%>" className="longField" cols="30" rows="10" expanded="true" linkTitle="Enter performance thresholds"/>
             <span class="smallNote">Newline-separated list of methods and their performance thresholds.
-                <br/>Pattern: <b>Namespace.Class.Method TotalTime OwnTime Calls Instances</b>, where
+                <br/>Pattern: <b>Namespace.Class.Method TotalTime OwnTime</b>, where
                 <br/><b>TotalTime</b> - execution time of the method's call subtree in ms.
                 <br/><b>OwnTime</b> - method's own execution time in ms.
-                <br/><b>Calls</b> - number of calls.
-                <br/><b>Instances</b> - number of method instances (if it was called from different places).
                 <br/>Use the <b>0</b> value to ignore a certain parameter.
                 <br/>
                 <br/>E.g., the build step will fail if <b>Test1</b> total time exceeds 100 ms:
-                <br/><b>IntegrationTests.MainTests.Test1 100 0 0 0</b>
+                <br/><b>IntegrationTests.MainTests.Test1 100 0</b>
                 <br/>
             </span>
         </td>
@@ -58,7 +60,6 @@
                     <props:option value="${type.key}"><c:out value="${type.value}"/></props:option>
                 </c:forEach>
             </props:selectProperty>
-            <%--<span class="smallNote">Select SSH transfer protocol to use</span>--%>
         </td>
     </tr>
 
@@ -70,7 +71,6 @@
                     <props:option value="${type.key}"><c:out value="${type.value}"/></props:option>
                 </c:forEach>
             </props:selectProperty>
-                <%--<span class="smallNote">Select SSH transfer protocol to use</span>--%>
         </td>
     </tr>
 </l:settingsGroup>

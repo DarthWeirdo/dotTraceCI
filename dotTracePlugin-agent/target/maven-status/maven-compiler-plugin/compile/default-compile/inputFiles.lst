@@ -7,6 +7,7 @@ E:\Projects\dotTracePlugin_master\dotTracePlugin-agent\src\main\java\com\dotTrac
 E:\Projects\dotTracePlugin_master\dotTracePlugin-agent\src\main\java\com\dotTracePlugin\agent\runner\dotTraceReporterConfigBuilder.java
 E:\Projects\dotTracePlugin_master\dotTracePlugin-agent\src\main\java\com\dotTracePlugin\agent\runner\dotTraceProfilerCommandLineBuilder.java
 E:\Projects\dotTracePlugin_master\dotTracePlugin-agent\src\main\java\com\dotTracePlugin\agent\runner\dotTraceComparer.java
+E:\Projects\dotTracePlugin_master\dotTracePlugin-agent\src\main\java\com\dotTracePlugin\agent\runner\dotTraceProfilerConfigReader.java
 E:\Projects\dotTracePlugin_master\dotTracePlugin-agent\src\main\java\com\dotTracePlugin\agent\model\ReportPattern.java
 E:\Projects\dotTracePlugin_master\dotTracePlugin-agent\src\main\java\com\dotTracePlugin\agent\model\ProfiledMethods.java
 E:\Projects\dotTracePlugin_master\dotTracePlugin-agent\src\main\java\com\dotTracePlugin\agent\model\ProfiledMethod.java

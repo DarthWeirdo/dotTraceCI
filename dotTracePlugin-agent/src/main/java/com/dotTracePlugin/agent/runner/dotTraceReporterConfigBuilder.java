@@ -38,7 +38,7 @@ public class dotTraceReporterConfigBuilder {
         for (String line : lines) {
             String[] splitLine = line.split("\\s+");
             ProfiledMethod method = new ProfiledMethod(
-                    "x",splitLine[0], splitLine[1], splitLine[2], splitLine[3], splitLine[4]);
+                    splitLine[0], splitLine[1], splitLine[2]);
             myThresholdValuesMap.put(splitLine[0], method);
         }
 

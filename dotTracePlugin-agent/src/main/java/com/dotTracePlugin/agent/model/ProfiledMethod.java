@@ -3,7 +3,6 @@ package com.dotTracePlugin.agent.model;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Created by Alexey.Totin on 5/11/2015.
@@ -11,9 +10,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 public class ProfiledMethod {
-
-    @XmlAttribute(name = "Id")
-    private String Id;
 
     @XmlAttribute(name = "FQN")
     private String FQN;
@@ -24,24 +20,15 @@ public class ProfiledMethod {
     @XmlAttribute(name = "OwnTime")
     private String OwnTime;
 
-    @XmlAttribute(name = "Calls")
-    private String Calls;
-
-    @XmlAttribute(name = "Instances")
-    private String Instances;
-
 
     public ProfiledMethod(){
 
     }
 
-    public ProfiledMethod(String id, String fQN, String totalTime, String ownTime, String calls, String instances){
-        Id = id;
+    public ProfiledMethod(String fQN, String totalTime, String ownTime){
         FQN = fQN;
         TotalTime = totalTime;
         OwnTime = ownTime;
-        Calls = calls;
-        Instances = instances;
     }
 
     public String getFQN() {
@@ -70,29 +57,5 @@ public class ProfiledMethod {
         OwnTime = ownTime;
     }
 
-    public String getCalls() {
-        return Calls;
-    }
 
-
-    public void setCalls(String calls) {
-        Calls = calls;
-    }
-
-    public String getInstances() {
-        return Instances;
-    }
-
-
-    public void setInstances(String instances) {
-        Instances = instances;
-    }
-
-    public String getId() {
-        return Id;
-    }
-
-    public void setId(String id) {
-        Id = id;
-    }
 }

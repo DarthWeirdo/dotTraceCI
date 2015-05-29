@@ -33,8 +33,10 @@ public class dotTraceProfilerCommandLineBuilder {
         String dotTracePath = myRunParameters.get(dotTraceRunnerConstants.PARAM_DOTTRACE_PATH);
         Map<String, String> confMap = new HashMap<String, String>();
         confMap.put(dotTraceRunnerConstants.CHECKOUTDIR_PLACEHOLDER, myRunningBuild.getCheckoutDirectory().toString());
-        dotTraceProfilerConfigReader configReader = new dotTraceProfilerConfigReader(confMap);
-        configReader.ReplacePlaceholders(configPath,
+        dotTraceProfilerConfigReader configReader = new dotTraceProfilerConfigReader();
+        configReader.ReplacePlaceholdersInFile(
+                confMap,
+                configPath,
                 new File(dotTracePath, dotTraceRunnerConstants.DT_TEMP_PROFILING_CONFIG).getPath());
 
         // create start.bat script
@@ -55,7 +57,7 @@ public class dotTraceProfilerCommandLineBuilder {
     @NotNull
     public List<String> getArguments() throws RunBuildException {
         List<String> arguments = new Vector<String>();
-        arguments.add(0, dotTraceRunnerConstants.DT_REPORTER_CONFIG);
+        arguments.add(0, "");
         return arguments;
     }
 

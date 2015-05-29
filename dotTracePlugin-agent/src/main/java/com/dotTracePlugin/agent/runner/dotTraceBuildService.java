@@ -1,10 +1,8 @@
 package com.dotTracePlugin.agent.runner;
 
-import com.dotTracePlugin.agent.model.CompareResult;
 import com.dotTracePlugin.agent.model.ProfiledMethod;
 import com.dotTracePlugin.common.dotTraceRunnerConstants;
 import jetbrains.buildServer.RunBuildException;
-import jetbrains.buildServer.agent.AgentRunningBuild;
 import jetbrains.buildServer.agent.BuildFinishedStatus;
 import jetbrains.buildServer.agent.runner.BuildServiceAdapter;
 import jetbrains.buildServer.agent.runner.ProgramCommandLine;
@@ -16,7 +14,6 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Vector;
 
 /**
  * Created by Alexey.Totin on 5/6/2015.
@@ -130,9 +127,9 @@ public class dotTraceBuildService extends BuildServiceAdapter {
 
                     // Publishing snapshot to artifacts
                     if (dotTraceRunnerConstants.EXC_THRESHOLDS.equals(publishSnapshot)) {
+                        getLogger().message("For more details, examine the snapshot in Artifacts\\dotTraceSnapshot.zip");
                         getLogger().logMessage(DefaultMessagesInfo.createTextMessage(
                                 publishSnapshotMsg).updateTags(DefaultMessagesInfo.TAG_INTERNAL));
-                        getLogger().message("For more details, examine the snapshot in Artifacts\\dotTraceSnapshot");
                     }
 
                     return onExcThrResult;

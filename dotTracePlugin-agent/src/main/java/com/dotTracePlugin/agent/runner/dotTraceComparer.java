@@ -31,13 +31,9 @@ public class dotTraceComparer {
                 int reportTotalTime = Integer.parseInt(currentReportMethod.getTotalTime());
                 int baseOwnTime = Integer.parseInt(currentBaseMethod.getOwnTime());
                 int reportOwnTime = Integer.parseInt(currentReportMethod.getOwnTime());
-                int baseCalls = Integer.parseInt(currentBaseMethod.getCalls());
-                int reportCalls = Integer.parseInt(currentReportMethod.getCalls());
-                int baseInstances = Integer.parseInt(currentBaseMethod.getInstances());
-                int reportInstances = Integer.parseInt(currentReportMethod.getInstances());
 
                 CompareResult currentResult = new CompareResult(currentKey, baseTotalTime, reportTotalTime,
-                        baseOwnTime, reportOwnTime, baseCalls, reportCalls, baseInstances, reportInstances);
+                        baseOwnTime, reportOwnTime);
                 this.isSuccessful = currentResult.isSuccessful();
                 myDiff.put(currentKey, currentResult);
             }
@@ -78,22 +74,6 @@ public class dotTraceComparer {
                 result.append(line);
                 result.append("\n\t");
             }
-
-            if (entry.getValue().getBaseCalls() != 0){
-                line = String.format("Calls [expected %d | measured %d | delta %d]",
-                        entry.getValue().getBaseCalls(), entry.getValue().getReportCalls(),
-                        entry.getValue().getDiffCalls());
-                result.append(line);
-                result.append("\n\t");
-            }
-
-            if (entry.getValue().getBaseInstances() != 0){
-                line = String.format("Instances [expected %d | measured %d | delta %d]",
-                        entry.getValue().getBaseInstances(), entry.getValue().getReportInstances(),
-                        entry.getValue().getDiffInstances());
-                result.append(line);
-                result.append("\n\t");
-            }
             result.append("\n");
         }
 
@@ -128,30 +108,6 @@ public class dotTraceComparer {
                         "##teamcity[%s key='%s:reportOwnTime' value='%d'] \n",
                         dotTraceRunnerConstants.DT_SERVICE_MESSAGE_NAME,
                         entry.getValue().getFQN(), entry.getValue().getReportOwnTime()));
-            }
-
-            if (entry.getValue().getBaseCalls() != 0){
-                result.append(String.format(
-                        "##teamcity[%s key='%s:baseCalls' value='%d'] \n",
-                        dotTraceRunnerConstants.DT_SERVICE_MESSAGE_NAME,
-                        entry.getValue().getFQN(), entry.getValue().getBaseCalls()));
-
-                result.append(String.format(
-                        "##teamcity[%s key='%s:reportCalls' value='%d'] \n",
-                        dotTraceRunnerConstants.DT_SERVICE_MESSAGE_NAME,
-                        entry.getValue().getFQN(), entry.getValue().getReportCalls()));
-            }
-
-            if (entry.getValue().getBaseInstances() != 0){
-                result.append(String.format(
-                        "##teamcity[%s key='%s:baseInstances' value='%d'] \n",
-                        dotTraceRunnerConstants.DT_SERVICE_MESSAGE_NAME,
-                        entry.getValue().getFQN(), entry.getValue().getBaseTotalTime()));
-
-                result.append(String.format(
-                        "##teamcity[%s key='%s:reportInstances' value='%d'] \n",
-                        dotTraceRunnerConstants.DT_SERVICE_MESSAGE_NAME,
-                        entry.getValue().getFQN(), entry.getValue().getReportInstances()));
             }
         }
 

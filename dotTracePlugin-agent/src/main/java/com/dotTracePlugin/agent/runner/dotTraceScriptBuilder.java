@@ -19,7 +19,7 @@ public class dotTraceScriptBuilder {
         myRunParameters = runParameters;
         String dotTracePath = myRunParameters.get(dotTraceRunnerConstants.PARAM_DOTTRACE_PATH);
         String consoleProfilerPath = new File(dotTracePath, dotTraceRunnerConstants.DT_PROFILER_BINARY).getPath();
-        String configPath = myRunParameters.get(dotTraceRunnerConstants.PARAM_PROFILING_CONFIG_PATH);
+        String configPath = new File(dotTracePath, dotTraceRunnerConstants.DT_TEMP_PROFILING_CONFIG).getPath();
         String tempPath = myRunParameters.get(dotTraceRunnerConstants.PARAM_TEMP_PATH);
         String snapshotPath = new File(tempPath, dotTraceRunnerConstants.DT_SNAPSHOT).getPath();
         String reporterPath = new File(dotTracePath, dotTraceRunnerConstants.DT_REPORTER_BINARY).getPath();

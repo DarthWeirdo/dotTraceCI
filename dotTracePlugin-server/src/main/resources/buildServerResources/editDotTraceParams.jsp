@@ -35,7 +35,7 @@
         <th><label for="com.dotTracePlugin.common.Thresholds">Threshold values: </label></th>
         <td>
             <props:multilineProperty name="<%=dotTraceRunnerConstants.PARAM_THRESHOLDS%>" className="longField" cols="30" rows="10" expanded="true" linkTitle="Enter performance thresholds"/>
-            <span class="smallNote">New line separated list of methods and their performance thresholds.
+            <span class="smallNote">Newline-separated list of methods and their performance thresholds.
                 <br/>Pattern: <b>Namespace.Class.Method TotalTime OwnTime Calls Instances</b>, where
                 <br/><b>TotalTime</b> - execution time of the method's call subtree in ms.
                 <br/><b>OwnTime</b> - method's own execution time in ms.

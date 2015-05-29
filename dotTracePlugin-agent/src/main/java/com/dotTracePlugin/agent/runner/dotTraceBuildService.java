@@ -4,6 +4,7 @@ import com.dotTracePlugin.agent.model.CompareResult;
 import com.dotTracePlugin.agent.model.ProfiledMethod;
 import com.dotTracePlugin.common.dotTraceRunnerConstants;
 import jetbrains.buildServer.RunBuildException;
+import jetbrains.buildServer.agent.AgentRunningBuild;
 import jetbrains.buildServer.agent.BuildFinishedStatus;
 import jetbrains.buildServer.agent.runner.BuildServiceAdapter;
 import jetbrains.buildServer.agent.runner.ProgramCommandLine;
@@ -31,7 +32,7 @@ public class dotTraceBuildService extends BuildServiceAdapter {
         final Map<String, String> runParameters = getRunnerParameters();
         final String dotTracePath = runParameters.get(dotTraceRunnerConstants.PARAM_DOTTRACE_PATH);
         final dotTraceProfilerCommandLineBuilder profilerCmdBuilder =
-                new dotTraceProfilerCommandLineBuilder(runParameters, getLogger());
+                new dotTraceProfilerCommandLineBuilder(this.getBuild(), runParameters, getLogger());
 
 
 
@@ -84,13 +85,14 @@ public class dotTraceBuildService extends BuildServiceAdapter {
         final dotTraceReportReader resultsReader =
                 new dotTraceReportReader(runParameters.get(dotTraceRunnerConstants.PARAM_DOTTRACE_PATH), getLogger());
 
+        // what to do with build on exceeding thresholds
         BuildFinishedStatus onExcThrResult = BuildFinishedStatus.FINISHED_FAILED;
         final String onExcThr = runParameters.get(dotTraceRunnerConstants.PARAM_ON_EXC_THRESHOLDS);
         if (dotTraceRunnerConstants.ON_EXC_PROBLEMS.equals(onExcThr))
             onExcThrResult = BuildFinishedStatus.FINISHED_WITH_PROBLEMS;
 
-        // TODO: publishing artifacts
-        String publishSnapshotMsg = String.format("##teamcity[publishArtifacts '%s* => dotTraceSnapshot/']",
+        // publish snapshot to artifacts?
+        String publishSnapshotMsg = String.format("##teamcity[publishArtifacts '%s* => dotTraceSnapshot.zip']",
                 new File(runParameters.get(dotTraceRunnerConstants.PARAM_TEMP_PATH),
                         dotTraceRunnerConstants.DT_SNAPSHOT).getPath());
         final String publishSnapshot = runParameters.get(dotTraceRunnerConstants.PARAM_PUBLISH_SNAPSHOT);
@@ -105,6 +107,7 @@ public class dotTraceBuildService extends BuildServiceAdapter {
                 perfResults = resultsReader.readPerfResults();
                 dotTraceComparer comparer = new dotTraceComparer(perfThresholds, perfResults);
 
+                // Write comparison results to build log
                 getLogger().message(comparer.getComparisonAsString());
                 getLogger().logMessage(DefaultMessagesInfo.createTextMessage(
                         comparer.getComparisonAsServiceMessage())
@@ -114,9 +117,11 @@ public class dotTraceBuildService extends BuildServiceAdapter {
                     getLogger().message("SUCCESS! Profiled methods do not exceed specified thresholds");
 
                     // Publishing snapshot to artifacts
-                    if (dotTraceRunnerConstants.ALWAYS.equals(publishSnapshot))
+                    if (dotTraceRunnerConstants.ALWAYS.equals(publishSnapshot)) {
+                        getLogger().message("For more details, examine the snapshot in Artifacts\\dotTraceSnapshot.zip");
                         getLogger().logMessage(DefaultMessagesInfo.createTextMessage(
-                            publishSnapshotMsg).updateTags(DefaultMessagesInfo.TAG_INTERNAL));
+                                publishSnapshotMsg).updateTags(DefaultMessagesInfo.TAG_INTERNAL));
+                    }
 
                     return BuildFinishedStatus.FINISHED_SUCCESS;
                 } else {
@@ -124,9 +129,11 @@ public class dotTraceBuildService extends BuildServiceAdapter {
                     getLogger().message("FAILED! Some of the specified thresholds were exceeded");
 
                     // Publishing snapshot to artifacts
-                    if (dotTraceRunnerConstants.EXC_THRESHOLDS.equals(publishSnapshot))
+                    if (dotTraceRunnerConstants.EXC_THRESHOLDS.equals(publishSnapshot)) {
                         getLogger().logMessage(DefaultMessagesInfo.createTextMessage(
-                            publishSnapshotMsg).updateTags(DefaultMessagesInfo.TAG_INTERNAL));
+                                publishSnapshotMsg).updateTags(DefaultMessagesInfo.TAG_INTERNAL));
+                        getLogger().message("For more details, examine the snapshot in Artifacts\\dotTraceSnapshot");
+                    }
 
                     return onExcThrResult;
                 }

@@ -5,6 +5,7 @@ com\dotTracePlugin\agent\runner\dotTraceReportReader.class
 com\dotTracePlugin\agent\runner\dotTraceRunner.class
 com\dotTracePlugin\agent\model\ReportPattern.class
 com\dotTracePlugin\agent\tools\XMLConverter.class
+com\dotTracePlugin\agent\runner\dotTraceProfilerConfigReader.class
 com\dotTracePlugin\agent\runner\dotTraceReporterConfigBuilder.class
 com\dotTracePlugin\agent\model\ReportPatterns.class
 com\dotTracePlugin\agent\runner\dotTraceBuildService.class

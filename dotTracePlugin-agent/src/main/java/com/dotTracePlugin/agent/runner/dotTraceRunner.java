@@ -1,6 +1,7 @@
 package com.dotTracePlugin.agent.runner;
 
 import jetbrains.buildServer.agent.AgentBuildRunnerInfo;
+import jetbrains.buildServer.agent.AgentRunningBuild;
 import jetbrains.buildServer.agent.runner.CommandLineBuildService;
 import jetbrains.buildServer.agent.runner.CommandLineBuildServiceFactory;
 import org.apache.log4j.Logger;

@@ -1,6 +1,7 @@
 E:\Projects\dotTracePlugin_master\dotTracePlugin-agent\src\main\java\com\dotTracePlugin\agent\model\CompareResult.java
 E:\Projects\dotTracePlugin_master\dotTracePlugin-agent\src\main\java\com\dotTracePlugin\agent\runner\dotTraceRunner.java
 E:\Projects\dotTracePlugin_master\dotTracePlugin-agent\src\main\java\com\dotTracePlugin\agent\runner\dotTraceRunnerInfo.java
+E:\Projects\dotTracePlugin_master\dotTracePlugin-agent\src\main\java\com\dotTracePlugin\agent\runner\dotTraceScriptBuilder.java
 E:\Projects\dotTracePlugin_master\dotTracePlugin-agent\src\main\java\com\dotTracePlugin\agent\model\ReportPatterns.java
 E:\Projects\dotTracePlugin_master\dotTracePlugin-agent\src\main\java\com\dotTracePlugin\agent\tools\XMLConverter.java
 E:\Projects\dotTracePlugin_master\dotTracePlugin-agent\src\main\java\com\dotTracePlugin\agent\runner\dotTraceReporterConfigBuilder.java

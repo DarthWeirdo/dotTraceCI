@@ -1,6 +1,7 @@
 package com.dotTracePlugin.server;
 
 import com.dotTracePlugin.common.dotTraceRunnerConstants;
+import jetbrains.buildServer.Build;
 import jetbrains.buildServer.serverSide.InvalidProperty;
 import jetbrains.buildServer.serverSide.PropertiesProcessor;
 import jetbrains.buildServer.serverSide.RunType;

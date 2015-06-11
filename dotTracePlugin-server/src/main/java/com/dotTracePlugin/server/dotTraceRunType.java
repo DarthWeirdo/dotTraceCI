@@ -51,8 +51,7 @@ public class dotTraceRunType extends RunType {
         return new dotTracePropertiesProcessor() {
             @Override
             public Collection<InvalidProperty> process(Map<String, String> properties) {
-                Collection<InvalidProperty> result = super.process(properties);
-                return result;
+                return super.process(properties);
             }
         };
     }
@@ -79,8 +78,8 @@ public class dotTraceRunType extends RunType {
     @Override
     public String describeParameters(@NotNull Map<String, String> parameters) {
         StringBuilder sb = new StringBuilder();
-        sb.append("dotTrace path: " + parameters.get(dotTraceRunnerConstants.PARAM_DOTTRACE_PATH)).append("\n");
-        sb.append("Profiling config path:" + parameters.get(dotTraceRunnerConstants.PARAM_PROFILING_CONFIG_PATH));
+        sb.append("dotTrace path: ").append(parameters.get(dotTraceRunnerConstants.PARAM_DOTTRACE_PATH)).append("\n");
+        sb.append("Profiling config path:").append(parameters.get(dotTraceRunnerConstants.PARAM_PROFILING_CONFIG_PATH));
         return sb.toString();
     }
 }

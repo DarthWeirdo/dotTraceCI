@@ -28,9 +28,6 @@ import java.util.*;
 public class dotTraceStatisticValueTranslator implements ServiceMessageTranslator {
 
     private final BuildDataStorage myStorage;
-    private List<SFinishedBuild> myHistory = null;
-    private boolean isBuildFailed = false;
-    private Map<String, Integer> myLastSuccessBuildValues = null;
     private Map<String, Integer> myPerfBaseOwnTime = new HashMap<String, Integer>();
     private Map<String, Integer> myPerfBaseTotalTime = new HashMap<String, Integer>();
     private Map<String, Integer> myPerfReportOwnTime = new HashMap<String, Integer>();
@@ -42,17 +39,12 @@ public class dotTraceStatisticValueTranslator implements ServiceMessageTranslato
     }
 
     @NotNull
-    public List<BuildMessage1> translate(SRunningBuild runningBuild, BuildMessage1 buildMessage, ServiceMessage serviceMessage) {
-//        buildMessage.updateTags(DefaultMessagesInfo.TAG_INTERNAL);
-        // FOR DEBUG PURPOSES
-        String debug = "";
-
-
+    public List<BuildMessage1> translate(@NotNull SRunningBuild runningBuild,
+                                         @NotNull BuildMessage1 buildMessage,
+                                         @NotNull ServiceMessage serviceMessage) {
         // prepare result
         List<BuildMessage1> result = new Vector<BuildMessage1>();
         result.add(buildMessage);
-
-
 
         // prepare build history
         List<SFinishedBuild> history = runningBuild.getBuildType().getHistory();
@@ -65,11 +57,6 @@ public class dotTraceStatisticValueTranslator implements ServiceMessageTranslato
             if (key != null && value != null) {
                 // parse value
                 BigDecimal bdValue = parseValue(history, key, value);
-                // DEBUG
-//                debug = bdValue.toString();
-//                result.add(new BuildMessage1(buildMessage.getSourceId(), buildMessage.getTypeId(),
-//                        buildMessage.getStatus(), buildMessage.getTimestamp(),
-//                        debug));
 
                 // write results to maps for comparison
                 String keyM = key.split(":")[0];
@@ -98,39 +85,12 @@ public class dotTraceStatisticValueTranslator implements ServiceMessageTranslato
 
             // finally
             if (comparer != null) {
-
-                // TODO: This is not working!
-                // publish snapshot to artifacts (variables)
-//                String publishSnapshotMsgText = String.format("##teamcity[publishArtifacts '%s* => dotTraceSnapshot.zip']",
-//                        new File(runningBuild.getBuildType().findRunnerParameter(dotTraceRunnerConstants.PARAM_TEMP_PATH),
-//                                dotTraceRunnerConstants.DT_SNAPSHOT).getPath());
-//                BuildMessage1 publishSnapshotMsg = new BuildMessage1(buildMessage.getSourceId(), buildMessage.getTypeId(),
-//                        buildMessage.getStatus(), buildMessage.getTimestamp(),
-//                        publishSnapshotMsgText);
-//                publishSnapshotMsg.updateTags(DefaultMessagesInfo.TAG_INTERNAL);
-//                final String publishSnapshot = runningBuild.getBuildType().findRunnerParameter(
-//                        dotTraceRunnerConstants.PARAM_PUBLISH_SNAPSHOT);
-
                 if (comparer.isSuccessful()) {
-                    // Publishing snapshot to artifacts
-//                    if (dotTraceRunnerConstants.ALWAYS.equals(publishSnapshot)) {
-//                        result.add(publishSnapshotMsg);
-//                    }
-
                     result.add(new BuildMessage1(buildMessage.getSourceId(), buildMessage.getTypeId(),
                             buildMessage.getStatus(), buildMessage.getTimestamp(),
                             "SUCCESS! Profiled methods do not exceed specified thresholds"));
-
                 }
                 else {
-                    // Publishing snapshot to artifacts
-//                    if (dotTraceRunnerConstants.EXC_THRESHOLDS.equals(publishSnapshot)) {
-//                        result.add(publishSnapshotMsg);
-//                        result.add(new BuildMessage1(buildMessage.getSourceId(), buildMessage.getTypeId(),
-//                                buildMessage.getStatus(), buildMessage.getTimestamp(),
-//                                "For more details, examine the snapshot in Artifacts\\dotTraceSnapshot.zip"));
-//                    }
-
                     result.add(new BuildMessage1(buildMessage.getSourceId(), buildMessage.getTypeId(),
                             buildMessage.getStatus(), buildMessage.getTimestamp(),
                             "FAILED! Some of the performance thresholds were exceeded"));
@@ -141,10 +101,7 @@ public class dotTraceStatisticValueTranslator implements ServiceMessageTranslato
                                 "Performance thresholds exceeded: " +
                                         getFailedThresholdsCount(comparer.getComparisonAsMap()).toString()));
                 }
-
-
             }
-
             return result;
         } catch (Exception e) {
 
@@ -158,7 +115,6 @@ public class dotTraceStatisticValueTranslator implements ServiceMessageTranslato
     @NotNull
     private BigDecimal parseValue(List<SFinishedBuild> buildHistory, String key, String value) {
         try {
-
             if (key.contains(":baseTotalTime") || key.contains(":baseOwnTime")) {
                 // check whether they must be ignored
                 if (value.equals("0")) {

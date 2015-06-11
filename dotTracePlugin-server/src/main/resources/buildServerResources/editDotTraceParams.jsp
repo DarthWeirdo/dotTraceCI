@@ -32,6 +32,17 @@
             <span class="smallNote">Enter local path (for a particular agent) to the temporary directory for storing performance snapshots</span>
         </td>
     </tr>
+
+    <tr>
+        <th><label for="com.dotTracePlugin.PublishSnapshots">Publish performance snapshot to artifacts: </label></th>
+        <td>
+            <props:selectProperty name="<%=dotTraceRunnerConstants.PARAM_PUBLISH_SNAPSHOT%>">
+                <c:forEach var="type" items="${runnerConst.publishSnapshotTypeValues}">
+                    <props:option value="${type.key}"><c:out value="${type.value}"/></props:option>
+                </c:forEach>
+            </props:selectProperty>
+        </td>
+    </tr>
 </l:settingsGroup>
 
 <l:settingsGroup title="Performance Thresholds">
@@ -52,25 +63,15 @@
         </td>
     </tr>
 
-    <tr>
-        <th><label for="com.dotTracePlugin.OnExcThresholds">On exceeding thresholds: </label></th>
-        <td>
-            <props:selectProperty name="<%=dotTraceRunnerConstants.PARAM_ON_EXC_THRESHOLDS%>">
-                <c:forEach var="type" items="${runnerConst.onExcThresholdsTypeValues}">
-                    <props:option value="${type.key}"><c:out value="${type.value}"/></props:option>
-                </c:forEach>
-            </props:selectProperty>
-        </td>
-    </tr>
+    <%--<tr>--%>
+        <%--<th><label for="com.dotTracePlugin.OnExcThresholds">On exceeding thresholds: </label></th>--%>
+        <%--<td>--%>
+            <%--<props:selectProperty name="<%=dotTraceRunnerConstants.PARAM_ON_EXC_THRESHOLDS%>">--%>
+                <%--<c:forEach var="type" items="${runnerConst.onExcThresholdsTypeValues}">--%>
+                    <%--<props:option value="${type.key}"><c:out value="${type.value}"/></props:option>--%>
+                <%--</c:forEach>--%>
+            <%--</props:selectProperty>--%>
+        <%--</td>--%>
+    <%--</tr>--%>
 
-    <tr>
-        <th><label for="com.dotTracePlugin.PublishSnapshots">Publish performance snapshot to artifacts: </label></th>
-        <td>
-            <props:selectProperty name="<%=dotTraceRunnerConstants.PARAM_PUBLISH_SNAPSHOT%>">
-                <c:forEach var="type" items="${runnerConst.publishSnapshotTypeValues}">
-                    <props:option value="${type.key}"><c:out value="${type.value}"/></props:option>
-                </c:forEach>
-            </props:selectProperty>
-        </td>
-    </tr>
 </l:settingsGroup>

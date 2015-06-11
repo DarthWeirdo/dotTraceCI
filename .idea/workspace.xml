@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/dotTracePlugin-server/src/main/java/com/dotTracePlugin/server/dotTraceStatisticValueTranslator.java" line="171" mnemonic="1" />
+    <bookmark url="file://$PROJECT_DIR$/dotTracePlugin-server/src/main/java/com/dotTracePlugin/server/dotTraceStatisticValueTranslator.java" line="127" mnemonic="1" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="277925ba-7ceb-4a50-a556-e0101f6697b3" name="Default" comment="" />
@@ -30,84 +30,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="dotTraceProfilerCommandLineBuilder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/runner/dotTraceProfilerCommandLineBuilder.java">
+      <file leaf-file-name="dotTraceBuildService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/runner/dotTraceBuildService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="38" column="43" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dotTraceProfilerConfigReader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/runner/dotTraceProfilerConfigReader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="39" column="36" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dotTraceReporterConfigBuilder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/runner/dotTraceReporterConfigBuilder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="35" column="56" selection-start-line="35" selection-start-column="56" selection-end-line="35" selection-end-column="56" />
+              <caret line="107" column="54" selection-start-line="107" selection-start-column="43" selection-end-line="107" selection-end-column="43" />
               <folding>
-                <element signature="e#2396#2397#0" expanded="true" />
-                <element signature="e#2439#2440#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dotTraceReportReader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/runner/dotTraceReportReader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dotTraceRunner.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/runner/dotTraceRunner.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="39" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dotTraceRunnerInfo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/runner/dotTraceRunnerInfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dotTraceScriptBuilder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/runner/dotTraceScriptBuilder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="53" column="9" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProfilingResult.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProfilingResult.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dotTracePlugin-server/src/main/java/com/dotTracePlugin/server/model/ProfilingResult.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.97834647">
-              <caret line="68" column="82" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="40" column="28" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
               <folding>
                 <element signature="e#1373#1374#0" expanded="true" />
                 <element signature="e#1415#1416#0" expanded="true" />
@@ -116,11 +55,47 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="XMLConverter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/tools/XMLConverter.java">
+      <file leaf-file-name="dotTraceStatisticValueTranslator.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dotTracePlugin-server/src/main/java/com/dotTracePlugin/server/dotTraceStatisticValueTranslator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="2.8405511">
+              <caret line="187" column="41" selection-start-line="187" selection-start-column="41" selection-end-line="187" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#8750#8751#0" expanded="true" />
+                <element signature="e#8820#8821#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="viewDotTraceParams.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dotTracePlugin-server/src/main/resources/buildServerResources/viewDotTraceParams.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-19.870968">
+              <caret line="28" column="18" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dotTraceRunnerConstants.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dotTracePlugin-common/src/main/java/com/dotTracePlugin/common/dotTraceRunnerConstants.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="48" column="53" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+              <caret line="33" column="39" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dotTracePropertiesProcessor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dotTracePlugin-server/src/main/java/com/dotTracePlugin/server/dotTracePropertiesProcessor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -130,7 +105,40 @@
         <entry file="file://$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/runner/dotTraceValuePublisher.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="36" column="23" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
+              <caret line="32" column="25" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dotTraceResultsComparer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dotTracePlugin-server/src/main/java/com/dotTracePlugin/server/dotTraceResultsComparer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dotTraceRunType.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dotTracePlugin-server/src/main/java/com/dotTracePlugin/server/dotTraceRunType.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="84" column="15" selection-start-line="84" selection-start-column="1" selection-end-line="84" selection-end-column="1" />
+              <folding>
+                <element signature="e#1407#1627#0" expanded="true" />
+                <element signature="e#1626#1627#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProfilingResult.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/model/ProfilingResult.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="37" column="4" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -173,21 +181,14 @@
         <option value="$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/model/CompResult.java" />
         <option value="$PROJECT_DIR$/dotTracePlugin-server/src/main/resources/META-INF/build-server-plugin-dotTracePlugin.xml" />
         <option value="$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/runner/dotTraceReportReader.java" />
-        <option value="$PROJECT_DIR$/dotTracePlugin-server/src/main/resources/buildServerResources/viewDotTraceParams.jsp" />
         <option value="$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/model/ProfilingConfig.java" />
         <option value="$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/model/ProfiledMethod.java" />
         <option value="$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/tools/XMLConverter.java" />
-        <option value="$PROJECT_DIR$/dotTracePlugin-server/src/main/resources/buildServerResources/editDotTraceParams.jsp" />
-        <option value="$PROJECT_DIR$/dotTracePlugin-server/src/main/java/com/dotTracePlugin/server/dotTraceRunType.java" />
         <option value="$PROJECT_DIR$/dotTracePlugin-server/src/main/java/com/dotTracePlugin/server/ProfilingResult.java" />
         <option value="$PROJECT_DIR$/dotTracePlugin-server/src/main/java/com/dotTracePlugin/server/dotTracePropertiesProcessor.java" />
-        <option value="$PROJECT_DIR$/dotTracePlugin-common/src/main/java/com/dotTracePlugin/common/dotTraceRunnerConstants.java" />
         <option value="$PROJECT_DIR$/dotTracePlugin-server/src/main/java/com/dotTracePlugin/server/model/ProfilingResult.java" />
-        <option value="$PROJECT_DIR$/dotTracePlugin-server/src/main/java/com/dotTracePlugin/server/dotTraceResultsComparer.java" />
-        <option value="$PROJECT_DIR$/dotTracePlugin-server/src/main/java/com/dotTracePlugin/server/dotTraceStatisticValueTranslator.java" />
         <option value="$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/runner/dotTraceComparer.java" />
         <option value="$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/model/CompareResult.java" />
-        <option value="$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/runner/dotTraceValuePublisher.java" />
         <option value="$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/model/ProfilingResult.java" />
         <option value="$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/runner/dotTraceBuildService.java" />
         <option value="$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/runner/dotTraceProfilerCommandLineBuilder.java" />
@@ -195,6 +196,13 @@
         <option value="$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/runner/dotTraceReporterConfigBuilder.java" />
         <option value="$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/runner/dotTraceRunner.java" />
         <option value="$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/runner/dotTraceScriptBuilder.java" />
+        <option value="$PROJECT_DIR$/dotTracePlugin-server/src/main/resources/buildServerResources/editDotTraceParams.jsp" />
+        <option value="$PROJECT_DIR$/dotTracePlugin-server/src/main/resources/buildServerResources/viewDotTraceParams.jsp" />
+        <option value="$PROJECT_DIR$/dotTracePlugin-common/src/main/java/com/dotTracePlugin/common/dotTraceRunnerConstants.java" />
+        <option value="$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/runner/dotTraceValuePublisher.java" />
+        <option value="$PROJECT_DIR$/dotTracePlugin-server/src/main/java/com/dotTracePlugin/server/dotTraceResultsComparer.java" />
+        <option value="$PROJECT_DIR$/dotTracePlugin-server/src/main/java/com/dotTracePlugin/server/dotTraceRunType.java" />
+        <option value="$PROJECT_DIR$/dotTracePlugin-server/src/main/java/com/dotTracePlugin/server/dotTraceStatisticValueTranslator.java" />
       </list>
     </option>
   </component>
@@ -901,12 +909,12 @@
       <workItem from="1433168998438" duration="61781000" />
       <workItem from="1433833556483" duration="15789000" />
       <workItem from="1433912761583" duration="24094000" />
-      <workItem from="1434001558984" duration="5619000" />
+      <workItem from="1434001558984" duration="7259000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="288513000" />
+    <option name="totallyTimeSpent" value="290153000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1121,13 +1129,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dotTracePlugin-server/src/main/resources/buildServerResources/viewDotTraceParams.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.161291">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/jetbrains/teamcity/server-api/9.0.1/server-api-9.0.1.jar!/jetbrains/buildServer/Build.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.48938322">
@@ -1146,13 +1147,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2669363">
           <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dotTracePlugin-server/src/main/resources/buildServerResources/editDotTraceParams.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -1177,42 +1171,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dotTracePlugin-server/src/main/java/com/dotTracePlugin/server/dotTraceRunType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="51" column="47" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dotTracePlugin-server/src/main/resources/META-INF/build-server-plugin-dotTracePlugin.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="116" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dotTracePlugin-common/src/main/java/com/dotTracePlugin/common/dotTraceRunnerConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="84" selection-start-line="16" selection-start-column="84" selection-end-line="16" selection-end-column="84" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#2063#2064#0" expanded="false" />
-            <element signature="e#2109#2110#0" expanded="false" />
-            <element signature="e#2443#2444#0" expanded="false" />
-            <element signature="e#2488#2489#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dotTracePlugin-server/src/main/java/com/dotTracePlugin/server/dotTracePropertiesProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1247,19 +1210,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dotTracePlugin-server/src/main/java/com/dotTracePlugin/server/dotTraceResultsComparer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding>
-            <element signature="e#1938#1939#0" expanded="false" />
-            <element signature="e#1969#1970#0" expanded="false" />
-            <element signature="e#4930#4931#0" expanded="false" />
-            <element signature="e#4965#4966#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/jetbrains/teamcity/common-api/9.0/common-api-9.0.jar!/jetbrains/buildServer/messages/BuildMessage1.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1273,16 +1223,6 @@
         <state vertical-scroll-proportion="-8.962963">
           <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dotTracePlugin-server/src/main/java/com/dotTracePlugin/server/dotTraceStatisticValueTranslator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="139" column="55" selection-start-line="139" selection-start-column="55" selection-end-line="139" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1307,24 +1247,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/model/ProfilingResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="4" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/runner/dotTraceBuildService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="88" column="51" selection-start-line="88" selection-start-column="14" selection-end-line="88" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1395,21 +1317,104 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dotTracePlugin-server/src/main/resources/buildServerResources/editDotTraceParams.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.2903225">
+          <caret line="34" column="4" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dotTracePlugin-server/src/main/resources/buildServerResources/viewDotTraceParams.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.870968">
+          <caret line="28" column="18" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dotTracePlugin-common/src/main/java/com/dotTracePlugin/common/dotTraceRunnerConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="39" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/runner/dotTraceBuildService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="107" column="54" selection-start-line="107" selection-start-column="43" selection-end-line="107" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/runner/dotTraceValuePublisher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="23" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
+          <caret line="32" column="25" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/model/ProfilingResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="37" column="4" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dotTracePlugin-server/src/main/java/com/dotTracePlugin/server/model/ProfilingResult.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.97834647">
-          <caret line="68" column="82" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="40" column="28" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
           <folding>
             <element signature="e#1373#1374#0" expanded="true" />
             <element signature="e#1415#1416#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dotTracePlugin-server/src/main/java/com/dotTracePlugin/server/dotTracePropertiesProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dotTracePlugin-server/src/main/java/com/dotTracePlugin/server/dotTraceResultsComparer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dotTracePlugin-server/src/main/java/com/dotTracePlugin/server/dotTraceRunType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="84" column="15" selection-start-line="84" selection-start-column="1" selection-end-line="84" selection-end-column="1" />
+          <folding>
+            <element signature="e#1407#1627#0" expanded="true" />
+            <element signature="e#1626#1627#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dotTracePlugin-server/src/main/java/com/dotTracePlugin/server/dotTraceStatisticValueTranslator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.8405511">
+          <caret line="187" column="41" selection-start-line="187" selection-start-column="41" selection-end-line="187" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#8750#8751#0" expanded="true" />
+            <element signature="e#8820#8821#0" expanded="true" />
           </folding>
         </state>
       </provider>

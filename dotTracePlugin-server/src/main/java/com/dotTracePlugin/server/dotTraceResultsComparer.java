@@ -11,21 +11,12 @@ import java.util.Map;
  * Created by Alexey.Totin on 6/5/2015.
  */
 public class dotTraceResultsComparer {
-    private Map<String, Integer> myBaseTotalTime;
-    private Map<String, Integer> myBaseOwnTime;
-    private Map<String, Integer> myReportTotalTime;
-    private Map<String, Integer> myReportOwnTime;
     private Map<String, ProfilingResult> myResult = new HashMap<String, ProfilingResult>();
-
     private boolean isSuccessful = true;
 
 
     public dotTraceResultsComparer(Map<String, Integer> myBaseTotalTime, Map<String, Integer> myBaseOwnTime,
                             Map<String, Integer> myReportTotalTime, Map<String, Integer> myReportOwnTime) {
-        this.myBaseTotalTime = myBaseTotalTime;
-        this.myBaseOwnTime = myBaseOwnTime;
-        this.myReportTotalTime = myReportTotalTime;
-        this.myReportOwnTime = myReportOwnTime;
 
         for (Map.Entry<String,Integer> entry : myBaseTotalTime.entrySet()) {
             String currentKey = entry.getKey();
@@ -82,40 +73,6 @@ public class dotTraceResultsComparer {
 
         return result.toString();
     }
-
-//    @NotNull
-//    public String getComparisonAsServiceMessage(){
-//        StringBuilder result = new StringBuilder();
-//
-//        for (Map.Entry<String,CompareResult> entry : myDiff.entrySet()) {
-//
-////            if (entry.getValue().getBaseTotalTime() != "0"){
-//            result.append(String.format(
-//                    "##teamcity[%s key='%s:baseTotalTime' value='%s'] \n",
-//                    dotTraceRunnerConstants.DT_SERVICE_MESSAGE_NAME,
-//                    entry.getValue().getFQN(), entry.getValue().getBaseTotalTime()));
-//
-//            result.append(String.format(
-//                    "##teamcity[%s key='%s:reportTotalTime' value='%s'] \n",
-//                    dotTraceRunnerConstants.DT_SERVICE_MESSAGE_NAME,
-//                    entry.getValue().getFQN(), entry.getValue().getReportTotalTime()));
-////            }
-//
-////            if (entry.getValue().getBaseOwnTime() != "0"){
-//            result.append(String.format(
-//                    "##teamcity[%s key='%s:baseOwnTime' value='%s'] \n",
-//                    dotTraceRunnerConstants.DT_SERVICE_MESSAGE_NAME,
-//                    entry.getValue().getFQN(), entry.getValue().getBaseOwnTime()));
-//
-//            result.append(String.format(
-//                    "##teamcity[%s key='%s:reportOwnTime' value='%s'] \n",
-//                    dotTraceRunnerConstants.DT_SERVICE_MESSAGE_NAME,
-//                    entry.getValue().getFQN(), entry.getValue().getReportOwnTime()));
-////            }
-//        }
-//
-//        return result.toString();
-//    }
 
     public boolean isSuccessful() {
         return isSuccessful;

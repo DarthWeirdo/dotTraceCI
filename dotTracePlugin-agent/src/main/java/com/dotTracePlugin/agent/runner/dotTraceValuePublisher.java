@@ -12,7 +12,7 @@ import java.util.Map;
  * Created by Alexey.Totin on 5/18/2015.
  */
 public class dotTraceValuePublisher {
-    private Map<String, ProfilingResult> myDiff = new HashMap<String, ProfilingResult>();
+    private Map<String, ProfilingResult> myValues = new HashMap<String, ProfilingResult>();
 
 
     public dotTraceValuePublisher(Map<String, ProfiledMethod> baseValues, Map<String, ProfiledMethod> reportValues) {
@@ -28,21 +28,21 @@ public class dotTraceValuePublisher {
 
                 ProfilingResult currentResult = new ProfilingResult(currentKey, baseTotalTime, reportTotalTime,
                         baseOwnTime, reportOwnTime);
-                myDiff.put(currentKey, currentResult);
+                myValues.put(currentKey, currentResult);
             }
         }
     }
 
     @NotNull
     public Map <String, ProfilingResult> getValuesAsMap(){
-        return myDiff;
+        return myValues;
     }
 
     @NotNull
     public String getValuesAsServiceMessage(){
         StringBuilder result = new StringBuilder();
 
-        for (Map.Entry<String,ProfilingResult> entry : myDiff.entrySet()) {
+        for (Map.Entry<String,ProfilingResult> entry : myValues.entrySet()) {
 
                 result.append(String.format(
                         "##teamcity[%s key='%s:baseTotalTime' value='%s'] \n",

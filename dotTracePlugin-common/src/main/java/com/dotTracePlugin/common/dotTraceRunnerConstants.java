@@ -21,9 +21,9 @@ public class dotTraceRunnerConstants {
     public static final String PARAM_PROFILING_CONFIG_PATH = "com.dotTracePlugin.ProfilingConfigPath";
     public static final String PARAM_TEMP_PATH = "com.dotTracePlugin.TempPath";
     public static final String PARAM_THRESHOLDS = "com.dotTracePlugin.Thresholds";
-    public static final String PARAM_ON_EXC_THRESHOLDS = "com.dotTracePlugin.OnExcThresholds";
-    public static final String ON_EXC_FAIL = "com.dotTracePlugin.OnExcThresholds.OnExcFail";
-    public static final String ON_EXC_PROBLEMS = "com.dotTracePlugin.OnExcThresholds.OnExcProblems";
+//    public static final String PARAM_ON_EXC_THRESHOLDS = "com.dotTracePlugin.OnExcThresholds";
+//    public static final String ON_EXC_FAIL = "com.dotTracePlugin.OnExcThresholds.OnExcFail";
+//    public static final String ON_EXC_PROBLEMS = "com.dotTracePlugin.OnExcThresholds.OnExcProblems";
     public static final String PARAM_PUBLISH_SNAPSHOT = "com.dotTracePlugin.PublishSnapshot";
     public static final String ALWAYS = "com.dotTracePlugin.PublishSnapshot.Always";
     public static final String EXC_THRESHOLDS = "com.dotTracePlugin.PublishSnapshot.ExcThresholds";
@@ -31,16 +31,16 @@ public class dotTraceRunnerConstants {
 
 
 
-    public String getOnExcThresholdsType() {
-        return PARAM_ON_EXC_THRESHOLDS;
-    }
-
-    public Map<String, String> getOnExcThresholdsTypeValues() {
-        final Map<String, String> result = new LinkedHashMap<String, String>();
-        result.put(ON_EXC_FAIL, "Fail build");
-        result.put(ON_EXC_PROBLEMS, "Finish build with problems");
-        return result;
-    }
+//    public String getOnExcThresholdsType() {
+//        return PARAM_ON_EXC_THRESHOLDS;
+//    }
+//
+//    public Map<String, String> getOnExcThresholdsTypeValues() {
+//        final Map<String, String> result = new LinkedHashMap<String, String>();
+//        result.put(ON_EXC_FAIL, "Fail build");
+//        result.put(ON_EXC_PROBLEMS, "Finish build with problems");
+//        return result;
+//    }
 
     public String getPublishSnapshotType() {
         return PARAM_PUBLISH_SNAPSHOT;

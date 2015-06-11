@@ -29,6 +29,7 @@ public class dotTraceReporterConfigBuilder {
         myLogger = logger;
     }
 
+
     public void makeConfig() throws IOException {
 
         // Parse threshold values string
@@ -59,7 +60,7 @@ public class dotTraceReporterConfigBuilder {
         converter.convertFromObjectToXML(reportPatterns, configPath);
     }
 
-    public Map<String, ProfiledMethod> getTresholdValues(){
+    public Map<String, ProfiledMethod> getThresholdValues(){
         return myThresholdValuesMap;
     }
 }

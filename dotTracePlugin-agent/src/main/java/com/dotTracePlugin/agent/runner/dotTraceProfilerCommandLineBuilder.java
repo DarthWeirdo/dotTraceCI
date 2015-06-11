@@ -17,22 +17,17 @@ import java.util.Vector;
  * Created by Alexey.Totin on 5/6/2015.
  */
 public class dotTraceProfilerCommandLineBuilder {
-    private AgentRunningBuild myRunningBuild;
     private final Map<String, String> myRunParameters;
-    private final SimpleBuildLogger myLogger;
-    private final dotTraceScriptBuilder myScriptBuilder;
 
     public dotTraceProfilerCommandLineBuilder(final AgentRunningBuild runningBuild,
                                               final Map<String, String> runParameters, SimpleBuildLogger logger) {
-        myRunningBuild = runningBuild;
         myRunParameters = runParameters;
-        myLogger = logger;
 
         // replace relative path with absolute in the profiling config file
         String configPath = myRunParameters.get(dotTraceRunnerConstants.PARAM_PROFILING_CONFIG_PATH);
         String dotTracePath = myRunParameters.get(dotTraceRunnerConstants.PARAM_DOTTRACE_PATH);
         Map<String, String> confMap = new HashMap<String, String>();
-        confMap.put(dotTraceRunnerConstants.CHECKOUTDIR_PLACEHOLDER, myRunningBuild.getCheckoutDirectory().toString());
+        confMap.put(dotTraceRunnerConstants.CHECKOUTDIR_PLACEHOLDER, runningBuild.getCheckoutDirectory().toString());
         dotTraceProfilerConfigReader configReader = new dotTraceProfilerConfigReader();
         configReader.ReplacePlaceholdersInFile(
                 confMap,
@@ -40,7 +35,7 @@ public class dotTraceProfilerCommandLineBuilder {
                 new File(dotTracePath, dotTraceRunnerConstants.DT_TEMP_PROFILING_CONFIG).getPath());
 
         // create start.bat script
-        myScriptBuilder = new dotTraceScriptBuilder(myRunParameters);
+        dotTraceScriptBuilder myScriptBuilder = new dotTraceScriptBuilder(myRunParameters);
         myScriptBuilder.saveScriptToDisk();
     }
 
@@ -50,8 +45,7 @@ public class dotTraceProfilerCommandLineBuilder {
         if (StringUtil.isEmpty(dotTraceRelativePath)) {
             throw new RunBuildException("dotTrace path is not specified");
         }
-        String result = new File(dotTraceRelativePath, dotTraceRunnerConstants.DT_RUN_SCRIPT).getPath();
-        return result;
+        return new File(dotTraceRelativePath, dotTraceRunnerConstants.DT_RUN_SCRIPT).getPath();
     }
 
     @NotNull

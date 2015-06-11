@@ -28,11 +28,13 @@ public class dotTraceProfilerConfigReader {
 
         for (Map.Entry<String,String> entry : placeholdersMap.entrySet()) {
             entry.setValue(entry.getValue().replace("\\", "\\\\"));
+            assert content != null;
             content = content.replaceAll(entry.getKey(), entry.getValue());
         }
 
 
         try {
+            assert content != null;
             Files.write(destPath, content.getBytes(charset));
         } catch (IOException e) {
             e.printStackTrace();

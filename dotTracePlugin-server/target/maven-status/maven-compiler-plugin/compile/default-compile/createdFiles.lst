@@ -1,4 +1,6 @@
 com\dotTracePlugin\server\dotTraceRunType.class
 com\dotTracePlugin\server\dotTraceStatisticValueTranslator.class
+com\dotTracePlugin\server\model\ProfilingResult.class
 com\dotTracePlugin\server\dotTracePropertiesProcessor.class
+com\dotTracePlugin\server\dotTraceResultsComparer.class
 com\dotTracePlugin\server\dotTraceRunType$1.class

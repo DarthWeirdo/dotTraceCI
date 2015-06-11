@@ -67,7 +67,7 @@ public class dotTraceBuildService extends BuildServiceAdapter {
                         getLogger());
         try {
             reporterConfigBuilder.makeConfig();
-            perfThresholds = reporterConfigBuilder.getTresholdValues();
+            perfThresholds = reporterConfigBuilder.getThresholdValues();
         } catch (IOException e) {
             getLogger().message("Unable to create reporter config file");
             e.printStackTrace();
@@ -82,19 +82,6 @@ public class dotTraceBuildService extends BuildServiceAdapter {
         final dotTraceReportReader resultsReader =
                 new dotTraceReportReader(runParameters.get(dotTraceRunnerConstants.PARAM_DOTTRACE_PATH), getLogger());
 
-        // what to do with build on exceeding thresholds
-        BuildFinishedStatus onExcThrResult = BuildFinishedStatus.FINISHED_FAILED;
-        final String onExcThr = runParameters.get(dotTraceRunnerConstants.PARAM_ON_EXC_THRESHOLDS);
-        if (dotTraceRunnerConstants.ON_EXC_PROBLEMS.equals(onExcThr))
-            onExcThrResult = BuildFinishedStatus.FINISHED_WITH_PROBLEMS;
-
-        // publish snapshot to artifacts?
-        String publishSnapshotMsg = String.format("##teamcity[publishArtifacts '%s* => dotTraceSnapshot.zip']",
-                new File(runParameters.get(dotTraceRunnerConstants.PARAM_TEMP_PATH),
-                        dotTraceRunnerConstants.DT_SNAPSHOT).getPath());
-        final String publishSnapshot = runParameters.get(dotTraceRunnerConstants.PARAM_PUBLISH_SNAPSHOT);
-
-
         if (exitCode != 0) {
             getLogger().message("dotTrace plugin was unable to finish some of the steps. See agent log for details");
             return BuildFinishedStatus.FINISHED_WITH_PROBLEMS;
@@ -102,45 +89,56 @@ public class dotTraceBuildService extends BuildServiceAdapter {
         else {
             try {
                 perfResults = resultsReader.readPerfResults();
-                dotTraceComparer comparer = new dotTraceComparer(perfThresholds, perfResults);
+                dotTraceValuePublisher publisher = new dotTraceValuePublisher(perfThresholds, perfResults);
 
-                // Write comparison results to build log
-                getLogger().message(comparer.getComparisonAsString());
+                // Write results to build log
                 getLogger().logMessage(DefaultMessagesInfo.createTextMessage(
-                        comparer.getComparisonAsServiceMessage())
+                        publisher.getValuesAsServiceMessage())
                         .updateTags(DefaultMessagesInfo.TAG_INTERNAL));
 
-                if (comparer.isSuccessful()) {
-                    getLogger().message("SUCCESS! Profiled methods do not exceed specified thresholds");
-
-                    // Publishing snapshot to artifacts
-                    if (dotTraceRunnerConstants.ALWAYS.equals(publishSnapshot)) {
-                        getLogger().message("For more details, examine the snapshot in Artifacts\\dotTraceSnapshot.zip");
-                        getLogger().logMessage(DefaultMessagesInfo.createTextMessage(
-                                publishSnapshotMsg).updateTags(DefaultMessagesInfo.TAG_INTERNAL));
-                    }
-
-                    return BuildFinishedStatus.FINISHED_SUCCESS;
-                } else {
-
-                    getLogger().message("FAILED! Some of the specified thresholds were exceeded");
-
-                    // Publishing snapshot to artifacts
-                    if (dotTraceRunnerConstants.EXC_THRESHOLDS.equals(publishSnapshot)) {
-                        getLogger().message("For more details, examine the snapshot in Artifacts\\dotTraceSnapshot.zip");
-                        getLogger().logMessage(DefaultMessagesInfo.createTextMessage(
-                                publishSnapshotMsg).updateTags(DefaultMessagesInfo.TAG_INTERNAL));
-                    }
-
-                    return onExcThrResult;
-                }
-
+                // indicate the end of work
+                getLogger().logMessage(DefaultMessagesInfo.createTextMessage(
+                        String.format("##teamcity[%s key='%s' value='1'] \n",
+                                dotTraceRunnerConstants.DT_SERVICE_MESSAGE_NAME,
+                                dotTraceRunnerConstants.DT_END_PROF_SERVICE_MESSAGE_NAME)));
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
+            publishSnapshot(runParameters);
         }
 
-        getLogger().message("dotTrace plugin was unable to finish some of the steps. See agent log for details");
-        return BuildFinishedStatus.FINISHED_WITH_PROBLEMS;
+        return BuildFinishedStatus.FINISHED_SUCCESS;
     }
+
+
+
+    private void publishSnapshot(Map<String, String> runParameters) {
+        String publishSnapshotMsg = String.format("##teamcity[publishArtifacts '%s* => dotTraceSnapshot.zip']",
+                new File(runParameters.get(dotTraceRunnerConstants.PARAM_TEMP_PATH),
+                        dotTraceRunnerConstants.DT_SNAPSHOT).getPath());
+        final String publishSnapshot = runParameters.get(dotTraceRunnerConstants.PARAM_PUBLISH_SNAPSHOT);
+
+        // Publishing snapshot to artifacts if ALWAYS is selected
+        if (dotTraceRunnerConstants.ALWAYS.equals(publishSnapshot)) {
+            getLogger().message("For more details, examine the snapshot in Artifacts\\dotTraceSnapshot.zip");
+            getLogger().logMessage(DefaultMessagesInfo.createTextMessage(
+                    publishSnapshotMsg).updateTags(DefaultMessagesInfo.TAG_INTERNAL));
+        }
+
+        try {
+            if (getBuild().isBuildFailingOnServer()){
+                // Publishing snapshot to artifacts if On Exceeding Thr. is selected
+                if (dotTraceRunnerConstants.EXC_THRESHOLDS.equals(publishSnapshot)) {
+                    getLogger().message("For more details, examine the snapshot in Artifacts\\dotTraceSnapshot.zip");
+                    getLogger().logMessage(DefaultMessagesInfo.createTextMessage(
+                            publishSnapshotMsg).updateTags(DefaultMessagesInfo.TAG_INTERNAL));
+                }
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }

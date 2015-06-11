@@ -14,6 +14,7 @@ public class dotTraceRunnerConstants {
     public static final String DT_TEMP_PROFILING_CONFIG = "temp_config.xml";
 //    public static final String DT_SERVICE_MESSAGE_NAME = "buildStatisticValue";
     public static final String DT_SERVICE_MESSAGE_NAME = "dotTraceStatisticValue";
+    public static final String DT_END_PROF_SERVICE_MESSAGE_NAME = "profilingFinished";
     public static final String CHECKOUTDIR_PLACEHOLDER = "%CHECKOUTDIR%";
 
     public static final String PARAM_DOTTRACE_PATH = "com.dotTracePlugin.dotTracePath";

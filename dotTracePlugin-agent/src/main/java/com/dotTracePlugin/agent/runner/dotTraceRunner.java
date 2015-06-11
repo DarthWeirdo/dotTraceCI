@@ -11,6 +11,7 @@ public class dotTraceRunner implements CommandLineBuildServiceFactory
 {
     public static final Logger myLog = Logger.getLogger(dotTraceRunner.class);
 
+    @NotNull
     public CommandLineBuildService createService() {
         return new dotTraceBuildService();
     }

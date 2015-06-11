@@ -15,6 +15,8 @@ import java.util.Map;
  */
 public class dotTracePropertiesProcessor implements PropertiesProcessor {
 
+
+
     public Collection<InvalidProperty> process(Map<String, String> properties) {
         Collection<InvalidProperty> result = new HashSet<InvalidProperty>();
         if (StringUtil.isEmptyOrSpaces(properties.get(dotTraceRunnerConstants.PARAM_DOTTRACE_PATH))) {

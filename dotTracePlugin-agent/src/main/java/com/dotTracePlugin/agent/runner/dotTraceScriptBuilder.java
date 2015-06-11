@@ -48,7 +48,9 @@ public class dotTraceScriptBuilder {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-        writer.println(myScript.toString());
-        writer.close();
+        if (writer != null) {
+            writer.println(myScript.toString());
+            writer.close();
+        }
     }
 }

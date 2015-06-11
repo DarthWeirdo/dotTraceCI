@@ -54,16 +54,20 @@ public class dotTraceResultsComparer {
             result.append("\n\t");
 
             if (entry.getValue().getBaseTotalTime() != -1){
+                int baseTotalTime = entry.getValue().getBaseTotalTime();
+                if (baseTotalTime == -2) {baseTotalTime = 0;}
                 line = String.format("Total time, ms [expected %d | measured %d | delta %d]",
-                        entry.getValue().getBaseTotalTime(), entry.getValue().getReportTotalTime(),
+                        baseTotalTime, entry.getValue().getReportTotalTime(),
                         entry.getValue().getDiffTotalTime());
                 result.append(line);
                 result.append("\n\t");
             }
 
             if (entry.getValue().getBaseOwnTime() != -1){
+                int baseOwnTime = entry.getValue().getBaseOwnTime();
+                if (baseOwnTime == -2) {baseOwnTime = 0;}
                 line = String.format("Own time, ms [expected %d | measured %d | delta %d]",
-                        entry.getValue().getBaseOwnTime(), entry.getValue().getReportOwnTime(),
+                        baseOwnTime, entry.getValue().getReportOwnTime(),
                         entry.getValue().getDiffOwnTime());
                 result.append(line);
                 result.append("\n\t");

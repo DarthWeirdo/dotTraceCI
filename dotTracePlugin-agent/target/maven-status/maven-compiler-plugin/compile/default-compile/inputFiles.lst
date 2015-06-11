@@ -1,4 +1,3 @@
-E:\Projects\dotTracePlugin_master\dotTracePlugin-agent\src\main\java\com\dotTracePlugin\agent\model\CompareResult.java
 E:\Projects\dotTracePlugin_master\dotTracePlugin-agent\src\main\java\com\dotTracePlugin\agent\runner\dotTraceRunner.java
 E:\Projects\dotTracePlugin_master\dotTracePlugin-agent\src\main\java\com\dotTracePlugin\agent\runner\dotTraceRunnerInfo.java
 E:\Projects\dotTracePlugin_master\dotTracePlugin-agent\src\main\java\com\dotTracePlugin\agent\runner\dotTraceScriptBuilder.java
@@ -6,7 +5,8 @@ E:\Projects\dotTracePlugin_master\dotTracePlugin-agent\src\main\java\com\dotTrac
 E:\Projects\dotTracePlugin_master\dotTracePlugin-agent\src\main\java\com\dotTracePlugin\agent\tools\XMLConverter.java
 E:\Projects\dotTracePlugin_master\dotTracePlugin-agent\src\main\java\com\dotTracePlugin\agent\runner\dotTraceReporterConfigBuilder.java
 E:\Projects\dotTracePlugin_master\dotTracePlugin-agent\src\main\java\com\dotTracePlugin\agent\runner\dotTraceProfilerCommandLineBuilder.java
-E:\Projects\dotTracePlugin_master\dotTracePlugin-agent\src\main\java\com\dotTracePlugin\agent\runner\dotTraceComparer.java
+E:\Projects\dotTracePlugin_master\dotTracePlugin-agent\src\main\java\com\dotTracePlugin\agent\model\ProfilingResult.java
+E:\Projects\dotTracePlugin_master\dotTracePlugin-agent\src\main\java\com\dotTracePlugin\agent\runner\dotTraceValuePublisher.java
 E:\Projects\dotTracePlugin_master\dotTracePlugin-agent\src\main\java\com\dotTracePlugin\agent\runner\dotTraceProfilerConfigReader.java
 E:\Projects\dotTracePlugin_master\dotTracePlugin-agent\src\main\java\com\dotTracePlugin\agent\model\ReportPattern.java
 E:\Projects\dotTracePlugin_master\dotTracePlugin-agent\src\main\java\com\dotTracePlugin\agent\model\ProfiledMethods.java

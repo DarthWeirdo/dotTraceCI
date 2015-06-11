@@ -26,14 +26,14 @@ public class ProfilingResult {
         this.baseOwnTime = baseOwnTime;
         this.reportOwnTime = reportOwnTime;
 
-        if (baseTotalTime != -1) {
+        if (baseTotalTime != -1 && baseTotalTime != -2) {
             diffTotalTime = reportTotalTime - baseTotalTime;
             if (diffTotalTime > 0) isSuccessful = false;
         } else {
             diffTotalTime = 0;
         }
 
-        if (baseOwnTime != -1) {
+        if (baseOwnTime != -1 && baseOwnTime != -2) {
             diffOwnTime = reportOwnTime - baseOwnTime;
             if (diffOwnTime > 0) isSuccessful = false;
         } else {

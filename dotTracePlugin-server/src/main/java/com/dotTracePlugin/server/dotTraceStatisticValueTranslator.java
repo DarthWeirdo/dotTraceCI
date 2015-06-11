@@ -80,6 +80,9 @@ public class dotTraceStatisticValueTranslator implements ServiceMessageTranslato
                 }
 
                 // save statistic value
+                if (key.contains(":baseOwnTime") || key.contains(":baseTotalTime")) {
+                    if (bdValue.intValue() == -1 || bdValue.intValue() == -2) {bdValue = new BigDecimal(0);}
+                }
                 myStorage.publishValue(key, runningBuild.getBuildId(), bdValue);
             }
 
@@ -118,7 +121,7 @@ public class dotTraceStatisticValueTranslator implements ServiceMessageTranslato
             if (key.contains(":baseTotalTime") || key.contains(":baseOwnTime")) {
                 // check whether they must be ignored
                 if (value.equals("0")) {
-                    return BigDecimal.valueOf(-1);
+                    return BigDecimal.valueOf(-1);  // -1 is an indicator of "ignore value"
                 }
 
                 // try to find value (+ variation) in the last successful build
@@ -130,7 +133,7 @@ public class dotTraceStatisticValueTranslator implements ServiceMessageTranslato
                         return new BigDecimal(lastSuccessValue.intValue() +
                                 lastSuccessValue.intValue() * variation * 0.01);
                     }
-                    return BigDecimal.valueOf(0);
+                    return BigDecimal.valueOf(-2);  // -2 is an indicator of "no history"
                 }
 
                 // TODO: try to calculate average value based on all successful builds

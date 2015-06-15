@@ -1,13 +1,46 @@
+# Find Performance Bottlenecks by Profiling Integration Tests
+dotTrace Profiler is a plugin to JetBrains Teamcity 9.0 and later that allows you to perform performance profiling
+as one of the continuous integration steps.
+All you need is to:
+1. Write a number of integration tests that cover performance-critical functionality.
+2. In the plugin parameters, set performance thresholds for these tests (or any of the underlying methods).
+The threshold can be set as an absolute number in ms for method's own or total (own + call subtree) time. Another option
+ is to check method's execution time against previous successful builds.
+3. That's it! Once the build is run, the plugin runs the tests and checks the execution time of the specified methods. If any of the
+thresholds are exceeded, the build is considered failed. After running the build step,
+dotTrace CI saves the corresponding performance snapshot that you can analyze in the dotTrace profiler and find out
+the cause of performance issues.
 
- TeamCity plugin
+# How to Build
+1. Issue the 'mvn package' command from the root project.
+The resulting package 'dotTracePlugin.zip' will be placed to the 'target' directory.
+Note that to build the plugin, Apache Maven must be installed on your machine.
 
- This is an empty project to develop TeamCity plugin.
+# How to Install
+1. Copy the zip from the 'target' directory to 'plugins' under the TeamCity data directory.
+2. Restart the 'TeamCity Server' service.
+3. Copy the dotTrace console profiling tool to a desired TeamCity agent.
+IMPORTANT! To provide profiling results consistency, you should pin the build configuration that uses the plugin
+to a specific build agent.
 
- 1. Implement
- This project contains 3 modules: '<artifactId>-server', '<artifactId>-agent' and '<artifactId>-common'. They will contain code for server and agent parts of your plugin and a common part, available for both (agent and server). When implementing components for server and agent parts, do not forget to update spring context files under 'main/resources/META-INF'. Otherwise your compoment may be not loaded. See TeamCity documentation for details on plugin development.
+# How to Use
+1. Write integration tests that cover certain application functionality.
+2. dotTrace Profiler plugin uses the dotTrace console tool for profiling. Therefore, to run the build step, you should create a
+profiling configuration for this tool. It is strongly recommended that you use the 'Configuration2Xml' tool to create the configuration.
+For more details, refer to https://www.jetbrains.com/profiler/help/Performance_Profiling__Profiling_Using_the_Command_Line.html
+IMPORTANT! When specifying the profiling target in the configuration, use the %CHECKOUTDIR% placeholder. The plugin
+will automatically replace it with the path to the project checkout directory on the agent.
+3. In your build configuration, add the 'dotTrace Profiler' build step.
+4. Specify the following options for the step:
+* *dotTrace path* - path to the dotTrace console tool directory on the agent.
+* *Profiling config file path* - path to the profiling configuration file you've created on step 2.
+* *Temp directory path* - path to the temporary directory used to store performance snapshot collected during the build step.
+Note that snapshot files are re-created each time the build is run.
+* *Publish performance snapshot to artifacts* - specify when the plugin should save the performance snapshot: never, always,
+or only when the performance thresholds are exceeded.
+* *Threshold values* - specify the newline-separated list of methods which performance you want to check. These can
+ be the integration tests as well any of the methods run by integration tests. Use the built-in help for more details.
+5. Save the build configuration and run the build. If at least one of the profiled methods doesn't meet its threshold, the build is considered failed.
 
- 2. Build
- Issue 'mvn package' command from the root project to build your plugin. Resulting package <artifactId>.zip will be placed in 'target' directory. 
- 
- 3. Install
- To install the plugin, put zip archive to 'plugins' dir under TeamCity data directory. If you only changed agent-side code of your plugin, the upgrade will be perfomed 'on the fly' (agents will upgrade when idle). If common or server-side code has changed, restart the server.
+
+

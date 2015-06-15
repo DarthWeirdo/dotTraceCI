@@ -124,7 +124,7 @@ public class dotTraceStatisticValueTranslator implements ServiceMessageTranslato
                     return BigDecimal.valueOf(-1);  // -1 is an indicator of "ignore value"
                 }
 
-                // try to find value (+ variation) in the last successful build
+                // value (+ variation) in the last successful build
                 if (value.toUpperCase().contains("L")){
                     String keyDb = key.replaceAll(":base", ":report");
                     BigDecimal lastSuccessValue = getLastSuccessBuildValue(buildHistory, keyDb);
@@ -136,7 +136,30 @@ public class dotTraceStatisticValueTranslator implements ServiceMessageTranslato
                     return BigDecimal.valueOf(-2);  // -2 is an indicator of "no history"
                 }
 
-                // TODO: try to calculate average value based on all successful builds
+                // average value (+ variation) for all successful builds
+                else if (value.toUpperCase().contains("A")){
+                    String keyDb = key.replaceAll(":base", ":report");
+                    BigDecimal avrgSuccessValue = getAverageSuccessBuildValue(buildHistory, keyDb);
+                    if (avrgSuccessValue != null){
+                        int variation = Integer.parseInt(value.replaceAll("A", ""));
+                        return new BigDecimal(avrgSuccessValue.intValue() +
+                                avrgSuccessValue.intValue() * variation * 0.01);
+                    }
+                    return BigDecimal.valueOf(-2);  // -2 is an indicator of "no history"
+                }
+
+                // value (+ variation) in the first successful build
+                else if (value.toUpperCase().contains("F")){
+                    String keyDb = key.replaceAll(":base", ":report");
+                    BigDecimal firstSuccessValue = getFirstSuccessBuildValue(buildHistory, keyDb);
+                    if (firstSuccessValue != null){
+                        int variation = Integer.parseInt(value.replaceAll("F", ""));
+                        return new BigDecimal(firstSuccessValue.intValue() +
+                                firstSuccessValue.intValue() * variation * 0.01);
+                    }
+                    return BigDecimal.valueOf(-2);  // -2 is an indicator of "no history"
+                }
+
             }
 
             return new BigDecimal(value.trim());
@@ -164,6 +187,67 @@ public class dotTraceStatisticValueTranslator implements ServiceMessageTranslato
             }
         }
         return null;
+    }
+
+    private BigDecimal getFirstSuccessBuildValue(List<SFinishedBuild> buildHistory, String key){
+
+        List<SFinishedBuild> successfulBuilds = new Vector<SFinishedBuild>();
+        List<BigDecimal> successfulValues = new Vector<BigDecimal>();
+
+        // take only successful builds
+        for (SFinishedBuild entry : buildHistory) {
+            if (entry.getBuildStatus().isSuccessful()){
+                successfulBuilds.add(entry);
+            }
+        }
+
+        // find the first one that contains the key
+        for (SFinishedBuild entry : successfulBuilds) {
+            Map<String, BigDecimal> values = myStorage.getValues(entry);
+            if (values.containsKey(key)){
+                successfulValues.add(values.get(key));
+            }
+        }
+        if (!successfulValues.isEmpty()){
+            return successfulValues.get(successfulValues.size() - 1);
+        }
+
+        return null;
+    }
+
+    private BigDecimal getAverageSuccessBuildValue(List<SFinishedBuild> buildHistory, String key){
+
+        List<SFinishedBuild> successfulBuilds = new Vector<SFinishedBuild>();
+        List<BigDecimal> successfulValues = new Vector<BigDecimal>();
+
+        // take only successful builds
+        for (SFinishedBuild entry : buildHistory) {
+            if (entry.getBuildStatus().isSuccessful()){
+                successfulBuilds.add(entry);
+            }
+        }
+
+        // calc average value
+        for (SFinishedBuild entry : successfulBuilds) {
+            Map<String, BigDecimal> values = myStorage.getValues(entry);
+            if (values.containsKey(key)){
+                successfulValues.add(values.get(key));
+            }
+        }
+        if (!successfulValues.isEmpty()){
+            return calculateAverage(successfulValues);
+        }
+
+        return null;
+    }
+
+    private BigDecimal calculateAverage(List<BigDecimal> list){
+        int sum = 0;
+        for (BigDecimal entry : list){
+            sum += entry.intValue();
+        }
+
+        return new BigDecimal(sum / list.size());
     }
 
     private Integer getFailedThresholdsCount(Map<String, ProfilingResult> comparisonResult){

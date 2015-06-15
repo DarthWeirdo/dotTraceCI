@@ -3,29 +3,25 @@ dotTrace Profiler is a plugin to JetBrains Teamcity 9.0 and later that allows yo
 
 All you need is to:
 1. Write a number of integration tests that cover performance-critical functionality.
-2. In the plugin parameters, set performance thresholds for these tests (or any of the underlying methods).
-The threshold can be set as an absolute number in ms for method's own or total (own + call subtree) time. Another option is to check method's execution time against previous successful builds.
+2. In the plugin parameters, set performance thresholds for these tests (or any of the underlying methods). The threshold can be set as an absolute number in ms for method's own or total (own + call subtree) time. Another option is to check method's execution time against previous successful builds.
 3. That's it! Once the build is run, the plugin runs the tests and checks the execution time of the specified methods. If any of the thresholds are exceeded, the build is considered failed. After running the build step, dotTrace Profiler plugin saves the corresponding performance snapshot that you can analyze in the dotTrace profiler and find out the cause of performance issues.
 
-# How to Build
+## How to Build
 1. Issue the 'mvn package' command from the root project.
 The resulting package 'dotTracePlugin.zip' will be placed to the 'target' directory.
 Note that to build the plugin, Apache Maven must be installed on your machine.
 
-# How to Install
+## How to Install
 1. Copy the zip from the 'target' directory to 'plugins' under the TeamCity data directory.
 2. Restart the 'TeamCity Server' service.
 3. Copy the dotTrace console profiling tool to a desired TeamCity agent.
-
 *IMPORTANT! To provide profiling results consistency, you should pin the build configuration that uses the plugin to a specific build agent.*
 
-# How to Use
+## How to Use
 1. Write integration tests that cover certain application functionality.
 2. dotTrace Profiler plugin uses the dotTrace console tool for profiling. Therefore, to run the build step, you should create a profiling configuration for this tool. It is strongly recommended that you use the 'Configuration2Xml' tool to create the configuration. For more details, refer to https://www.jetbrains.com/profiler/help/Performance_Profiling__Profiling_Using_the_Command_Line.html
- 
 *IMPORTANT! When specifying the profiling target in the configuration, use the %CHECKOUTDIR% placeholder. The plugin
 will automatically replace it with the path to the project checkout directory on the agent.*
-
 3. In your build configuration, add the 'dotTrace Profiler' build step.
 4. Specify the following options for the step:
   * **dotTrace path** - path to the dotTrace console tool directory on the agent.

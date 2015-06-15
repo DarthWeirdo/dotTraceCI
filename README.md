@@ -2,9 +2,9 @@
 dotTrace Profiler is a plugin to JetBrains Teamcity 9.0 and later that allows you to perform performance profiling as one of the continuous integration steps.
 
 All you need is to:
-1. Write a number of integration tests that cover performance-critical functionality.
-2. In the plugin parameters, set performance thresholds for these tests (or any of the underlying methods). The threshold can be set as an absolute number in ms for method's own or total (own + call subtree) time. Another option is to check method's execution time against previous successful builds.
-3. That's it! Once the build is run, the plugin runs the tests and checks the execution time of the specified methods. If any of the thresholds are exceeded, the build is considered failed. After running the build step, dotTrace Profiler plugin saves the corresponding performance snapshot that you can analyze in the dotTrace profiler and find out the cause of performance issues.
+* Write a number of integration tests that cover performance-critical functionality.
+* In the plugin parameters, set performance thresholds for these tests (or any of the underlying methods). The threshold can be set as an absolute number in ms for method's own or total (own + call subtree) time. Another option is to check method's execution time against previous successful builds.
+* That's it! Once the build is run, the plugin runs the tests and checks the execution time of the specified methods. If any of the thresholds are exceeded, the build is considered failed. After running the build step, dotTrace Profiler plugin saves the corresponding performance snapshot that you can analyze in the dotTrace profiler and find out the cause of performance issues.
 
 ## How to Build
 1. Issue the 'mvn package' command from the root project.
@@ -31,4 +31,4 @@ will automatically replace it with the path to the project checkout directory on
   * **Threshold values** - specify the newline-separated list of methods which performance you want to check. These can
  be the integration tests as well any of the methods run by integration tests. Use the built-in help for more details.
 5. Save the build configuration and run the build. If at least one of the profiled methods doesn't meet its threshold, the build is considered failed. 
-6. To view profiling results, open the **Build Log** for the build. Note that profiling results (execution times of specified methods) are also saved as TeamCity statistic values. Thus, you can view their graphs on **Parameters | Reported statistic values** page of the current build.
+6. To view profiling results, open the **Build Log** for the build. Note that profiling results (execution times of specified methods) are also reported as build statistic values. Thus, you can view their graphs on **Parameters | Reported statistic values** page of the current build.

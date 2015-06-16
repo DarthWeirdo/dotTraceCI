@@ -4,7 +4,7 @@ dotTrace Profiler is a plugin to JetBrains Teamcity 9.0 and later that allows yo
 All you need is to:
 * Write a number of integration tests that cover performance-critical functionality of your app.
 * In the plugin parameters, set performance thresholds for these tests (or any of the underlying methods). The threshold can be set as an absolute number in ms for method's own or total (own + call subtree) time. Another option is to check method's execution time against previous successful builds.
-* That's it! Once the build is run, the plugin runs the tests and checks the execution time of the specified methods. If any of the thresholds are exceeded, the build is considered failed. After running the build step, dotTrace Profiler plugin saves the corresponding performance snapshot that you can analyze in the dotTrace profiler and find out the cause of performance issues.
+* That's it! Once the build is run, the plugin runs the tests and checks the execution time of the specified methods. If any of the thresholds are exceeded, the build is considered failed. After running the build step, dotTrace Profiler plugin saves a performance snapshot. Analyze it in the standalone dotTrace profiler and find out the cause of performance issues.
 
 ## How to Build
 1. Issue the 'mvn package' command from the root project.

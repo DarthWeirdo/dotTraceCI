@@ -29,6 +29,6 @@ will automatically replace it with the path to the project checkout directory on
   * **Temp directory path** - path to the temporary directory used to store performance snapshot collected during the build step. Note that snapshot files are re-created each time the build is run.
   * **Publish performance snapshot to artifacts** - specify when the plugin should save the performance snapshot: never, always, or only when the performance thresholds are exceeded.
   * **Threshold values** - specify the newline-separated list of methods which performance you want to check. These can
- be the integration tests as well any of the methods run by integration tests. Use the built-in help for more details.
+ be particular integration tests as well as any of the methods run by these tests. Use the built-in help for more details.
 5. Save the build configuration and run the build. If at least one of the profiled methods doesn't meet its threshold, the build is considered failed. 
 6. To view profiling results, open the **Build Log** for the build. Note that profiling results (execution times of specified methods) are also reported as build statistic values. Thus, you can view their graphs on **Parameters | Reported statistic values** page of the current build.

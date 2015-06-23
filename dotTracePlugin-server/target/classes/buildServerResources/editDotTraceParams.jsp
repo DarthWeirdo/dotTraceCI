@@ -8,10 +8,10 @@
 
 <l:settingsGroup title="Profiling Options">
     <tr>
-        <th><label for="com.dotTracePlugin.common.dotTracePath">dotTrace path: <l:star/></label></th>
+        <th><label for="com.dotTracePlugin.common.dotTracePath">Console profiler path: <l:star/></label></th>
         <td>
             <props:textProperty name="<%=dotTraceRunnerConstants.PARAM_DOTTRACE_PATH%>" className="longField" maxlength="1024" />
-            <span class="smallNote">Enter local path (for a particular agent) to the dotTrace directory</span>
+            <span class="smallNote">Enter local path (for a particular agent) to the dotTrace console profiler directory</span>
         </td>
     </tr>
     <tr>
@@ -54,10 +54,17 @@
                 <br/>Pattern: <b>Namespace.Class.Method TotalTime OwnTime</b>, where
                 <br/><b>TotalTime</b> - execution time of the method's call subtree in ms.
                 <br/><b>OwnTime</b> - method's own execution time in ms.
+                <br/>To compare profiling results with previous successful builds, instead of the
+                absolute time value, specify one of the following:
+                <br/><b>F[variation]</b> - compare time + variation against the value from the <i>first</i> successful build.
+                <br/><b>A[variation]</b> - compare time + variation against the <i>average</i> value calculated for all successful builds.
+                <br/><b>L[variation]</b> - compare time + variation against the value from the <i>last</i> successful build.
+                <br/><b>[variation]</b> is set in percent.
                 <br/>Use the <b>0</b> value to ignore a certain parameter.
                 <br/>
-                <br/>E.g., the build step will fail if <b>Test1</b> total time exceeds 100 ms:
-                <br/><b>IntegrationTests.MainTests.Test1 100 0</b>
+                <br/>E.g., the build step will fail if <b>Test1</b> total time exceeds 100 ms or its own time exceeds
+                the own time from the first successful build by more than 15%:
+                <br/><b>IntegrationTests.MainTests.Test1 100 F15</b>
                 <br/>
             </span>
         </td>

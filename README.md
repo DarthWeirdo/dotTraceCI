@@ -1,4 +1,4 @@
-# Find Performance Bottlenecks by Profiling Integration Tests in CI
+# Prevent performance regression in your app by profiling integration tests on a CI server
 dotTrace Profiler is a plugin to JetBrains Teamcity 9.0 and later that allows you to perform performance profiling as one of the continuous integration steps.
 
 All you need is to:

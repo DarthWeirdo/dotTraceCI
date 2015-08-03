@@ -84,7 +84,7 @@ public class dotTraceBuildService extends BuildServiceAdapter {
 
         if (exitCode != 0) {
             getLogger().message("dotTrace plugin was unable to finish some of the steps. See agent log for details");
-            return BuildFinishedStatus.FINISHED_WITH_PROBLEMS;
+            return BuildFinishedStatus.FINISHED_FAILED;
         }
         else {
             try {

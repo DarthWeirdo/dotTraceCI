@@ -14,12 +14,12 @@ Note that to build the plugin, Apache Maven must be installed on your machine.
 ## How to Install
 1. Copy the zip from the 'target' directory to 'plugins' under the TeamCity data directory.
 2. Restart the 'TeamCity Server' service.
-3. Copy the dotTrace console profiling tool to a desired TeamCity agent.
-*IMPORTANT! To provide profiling results consistency, you should pin the build configuration that uses the plugin to a specific build agent.*
+3. Copy the dotTrace console profiling tool to a desired TeamCity agent. The tool can be taken [here](http://download.jetbrains.com/resharper/JetBrains.dotTrace.CommandLineTools.6.2.20150727.155523-EAP5.zip).
+*IMPORTANT! To provide profiling results consistency, you should assign the build configuration that uses the plugin to a specific build agent.*
 
 ## How to Use
 1. Write integration tests that cover certain application functionality.
-2. dotTrace Profiler plugin uses the dotTrace console tool for profiling. Therefore, to run the build step, you should create a profiling configuration for this tool. It is strongly recommended that you use the 'Configuration2Xml' tool to create the configuration. For more details, refer to https://www.jetbrains.com/profiler/help/Performance_Profiling__Profiling_Using_the_Command_Line.html
+2. dotTrace Profiler plugin uses the dotTrace console tool for profiling. Therefore, to run the build step, you should create a profiling configuration for this tool. It is strongly recommended that you use the 'Configuration2Xml' tool to create the configuration. For more details, refer to [dotTrace documentation](https://www.jetbrains.com/profiler/help/Performance_Profiling__Profiling_Using_the_Command_Line.html).
 *IMPORTANT! When specifying the profiling target in the configuration, use the %CHECKOUTDIR% placeholder. The plugin
 will automatically replace it with the path to the project checkout directory on the agent.*
 3. In your build configuration, add the 'dotTrace Profiler' build step.

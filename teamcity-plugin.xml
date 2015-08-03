@@ -3,14 +3,14 @@
   <info>
     <name>dotTracePlugin</name>
     <display-name>dotTracePlugin</display-name>
-    <version>@Version@</version>
-    <description>Plugin description</description>
-    <download-url>Plugin download URL</download-url>
-    <email>Plugin author e-mail</email>
+    <version>0.9.1</version>
+    <description>Helps prevent performance regression by profiling integration tests on a CI server</description>
+    <download-url>https://github.com/DarthWeirdo/dotTraceCI/releases</download-url>
+    <email>Alexey.Totin@jetbrains.com</email>
     <vendor>
-      <name>@VendorName@</name>
-      <url>@VendorURL@</url>
-      <logo>Plugin vendor logo URL</logo>
+      <name>Alexey Totin</name>
+      <!--<url>@VendorURL@</url>-->
+      <!--<logo>Plugin vendor logo URL</logo>-->
     </vendor>
   </info>
   <deployment use-separate-classloader="true" />

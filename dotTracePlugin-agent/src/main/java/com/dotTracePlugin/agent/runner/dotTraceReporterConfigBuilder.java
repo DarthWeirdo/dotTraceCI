@@ -34,6 +34,7 @@ public class dotTraceReporterConfigBuilder {
 
         // Parse threshold values string
         myLogger.message("Parsing threshold values...");
+
         String[] lines = myThresholdValuesString.split("\\r?\\n");
 
         for (String line : lines) {

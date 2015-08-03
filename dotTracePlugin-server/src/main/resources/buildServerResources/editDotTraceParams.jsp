@@ -47,7 +47,7 @@
 
 <l:settingsGroup title="Performance Thresholds">
     <tr>
-        <th><label for="com.dotTracePlugin.common.Thresholds">Threshold values: </label></th>
+        <th><label for="com.dotTracePlugin.common.Thresholds">Threshold values: <l:star/></label></th>
         <td>
             <props:multilineProperty name="<%=dotTraceRunnerConstants.PARAM_THRESHOLDS%>" className="longField" cols="30" rows="10" expanded="true" linkTitle="Enter performance thresholds"/>
             <span class="smallNote">Newline-separated list of methods and their performance thresholds.
@@ -56,10 +56,10 @@
                 <br/><b>OwnTime</b> - method's own execution time in ms.
                 <br/>To compare profiling results with previous successful builds, instead of the
                 absolute time value, specify one of the following:
-                <br/><b>F[variation]</b> - compare time + variation against the value from the <i>first</i> successful build.
-                <br/><b>A[variation]</b> - compare time + variation against the <i>average</i> value calculated for all successful builds.
-                <br/><b>L[variation]</b> - compare time + variation against the value from the <i>last</i> successful build.
-                <br/><b>[variation]</b> is set in percent.
+                <br/><b>F[tolerance]</b> - compare (time + tolerance) against the value from the <i>first</i> successful build.
+                <br/><b>A[tolerance]</b> - compare (time + tolerance) against the <i>average</i> value calculated for all successful builds.
+                <br/><b>L[tolerance]</b> - compare (time + tolerance) against the value from the <i>last</i> successful build.
+                <br/><b>[tolerance]</b> is set in percent.
                 <br/>Use the <b>0</b> value to ignore a certain parameter.
                 <br/>
                 <br/>E.g., the build step will fail if <b>Test1</b> total time exceeds 100 ms or its own time exceeds

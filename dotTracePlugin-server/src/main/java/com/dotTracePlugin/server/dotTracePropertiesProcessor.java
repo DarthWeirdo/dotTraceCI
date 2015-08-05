@@ -29,9 +29,9 @@ public class dotTracePropertiesProcessor implements PropertiesProcessor {
             result.add(new InvalidProperty(dotTraceRunnerConstants.PARAM_PROFILING_CONFIG_PATH, "The path must be specified"));
         }
 
-        File f = new File(properties.get(dotTraceRunnerConstants.PARAM_PROFILING_CONFIG_PATH));
-        if(!f.exists() && !f.isDirectory()) {
-            result.add(new InvalidProperty(dotTraceRunnerConstants.PARAM_PROFILING_CONFIG_PATH, "The config file does not exist"));}
+//        File f = new File(properties.get(dotTraceRunnerConstants.PARAM_PROFILING_CONFIG_PATH));
+//        if(!f.exists() && !f.isDirectory()) {
+//            result.add(new InvalidProperty(dotTraceRunnerConstants.PARAM_PROFILING_CONFIG_PATH, "The config file does not exist"));}
 
         if (StringUtil.isEmptyOrSpaces(properties.get(dotTraceRunnerConstants.PARAM_TEMP_PATH))) {
             result.add(new InvalidProperty(dotTraceRunnerConstants.PARAM_TEMP_PATH, "The path must be specified"));

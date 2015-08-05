@@ -30,27 +30,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider editor-type-id="markdown-preview-editor">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.827586">
-              <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="dotTraceValuePublisher.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/runner/dotTraceValuePublisher.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="33" column="37" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+              <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
               <folding>
-                <element signature="e#1568#1569#0" expanded="true" />
-                <element signature="e#1599#1600#0" expanded="true" />
+                <element signature="imports" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -61,7 +47,13 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#362#363#0" expanded="false" />
+                <element signature="e#393#394#0" expanded="false" />
+                <element signature="e#488#489#0" expanded="false" />
+                <element signature="e#528#529#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -71,7 +63,13 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#309#310#0" expanded="false" />
+                <element signature="e#339#340#0" expanded="false" />
+                <element signature="e#401#402#0" expanded="false" />
+                <element signature="e#434#435#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -81,7 +79,18 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="e#677#678#0" expanded="false" />
+                <element signature="e#713#714#0" expanded="false" />
+                <element signature="e#754#755#0" expanded="false" />
+                <element signature="e#792#793#0" expanded="false" />
+                <element signature="e#829#830#0" expanded="false" />
+                <element signature="e#863#864#0" expanded="false" />
+                <element signature="e#902#903#0" expanded="false" />
+                <element signature="e#938#939#0" expanded="false" />
+                <element signature="e#968#969#0" expanded="false" />
+                <element signature="e#994#995#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -91,7 +100,13 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="32" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#464#465#0" expanded="false" />
+                <element signature="e#494#495#0" expanded="false" />
+                <element signature="e#554#555#0" expanded="false" />
+                <element signature="e#592#593#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -100,17 +115,31 @@
         <entry file="file://$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/model/ProfiledMethod.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="65" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-              <folding />
+              <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#719#720#0" expanded="false" />
+                <element signature="e#745#746#0" expanded="false" />
+                <element signature="e#783#784#0" expanded="false" />
+                <element signature="e#813#814#0" expanded="false" />
+                <element signature="e#849#850#0" expanded="false" />
+                <element signature="e#881#882#0" expanded="false" />
+                <element signature="e#932#933#0" expanded="false" />
+                <element signature="e#969#970#0" expanded="false" />
+                <element signature="e#1003#1004#0" expanded="false" />
+                <element signature="e#1033#1034#0" expanded="false" />
+                <element signature="e#1080#1081#0" expanded="false" />
+                <element signature="e#1113#1114#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dotTracePropertiesProcessor.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="dotTracePropertiesProcessor.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dotTracePlugin-server/src/main/java/com/dotTracePlugin/server/dotTracePropertiesProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="41" column="37" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.22047244">
+              <caret line="31" column="14" selection-start-line="31" selection-start-column="14" selection-end-line="33" selection-end-column="134" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -122,16 +151,26 @@
         <entry file="file://$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/runner/dotTraceBuildService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="76" column="47" selection-start-line="76" selection-start-column="12" selection-end-line="76" selection-end-column="12" />
+              <caret line="76" column="12" selection-start-line="76" selection-start-column="12" selection-end-line="76" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="teamcity-plugin.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dotTraceProfilerCommandLineBuilder.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/runner/dotTraceProfilerCommandLineBuilder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="37" column="22" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="teamcity-plugin.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/teamcity-plugin.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.37969545">
+            <state vertical-scroll-proportion="-12.064516">
               <caret line="17" column="39" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
@@ -198,8 +237,8 @@
         <option value="$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/runner/dotTraceBuildService.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/dotTracePlugin-server/src/main/resources/buildServerResources/editDotTraceParams.jsp" />
-        <option value="$PROJECT_DIR$/dotTracePlugin-server/src/main/java/com/dotTracePlugin/server/dotTracePropertiesProcessor.java" />
         <option value="$PROJECT_DIR$/teamcity-plugin.xml" />
+        <option value="$PROJECT_DIR$/dotTracePlugin-server/src/main/java/com/dotTracePlugin/server/dotTracePropertiesProcessor.java" />
       </list>
     </option>
   </component>
@@ -251,7 +290,9 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -550,8 +591,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -861,11 +900,12 @@
       <workItem from="1434523857982" duration="3773000" />
       <workItem from="1438266602777" duration="9204000" />
       <workItem from="1438343461127" duration="18127000" />
+      <workItem from="1438673744004" duration="855000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="340385000" />
+    <option name="totallyTimeSpent" value="341240000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -887,27 +927,27 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25053304" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Stardust" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854405" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32950193" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854405" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1160,7 +1200,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="63" column="90" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1168,7 +1207,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="45" column="84" selection-start-line="45" selection-start-column="43" selection-end-line="45" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1176,11 +1214,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#463#464#0" expanded="false" />
-            <element signature="e#521#522#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1208,23 +1241,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/runner/dotTraceProfilerCommandLineBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="37" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/runner/dotTraceProfilerConfigReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1256,7 +1276,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.967742">
           <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1265,7 +1284,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="31" column="37" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1274,7 +1293,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.6774194">
           <caret line="48" column="57" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1286,34 +1304,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dotTracePlugin-server/src/main/java/com/dotTracePlugin/server/dotTracePropertiesProcessor.java">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="37" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="markdown-preview-editor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.827586">
           <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="markdown-preview-editor">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/runner/dotTraceValuePublisher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="37" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
           <folding>
-            <element signature="e#1568#1569#0" expanded="true" />
-            <element signature="e#1599#1600#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1322,7 +1329,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#362#363#0" expanded="false" />
+            <element signature="e#393#394#0" expanded="false" />
+            <element signature="e#488#489#0" expanded="false" />
+            <element signature="e#528#529#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1330,7 +1343,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#309#310#0" expanded="false" />
+            <element signature="e#339#340#0" expanded="false" />
+            <element signature="e#401#402#0" expanded="false" />
+            <element signature="e#434#435#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1338,7 +1357,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#677#678#0" expanded="false" />
+            <element signature="e#713#714#0" expanded="false" />
+            <element signature="e#754#755#0" expanded="false" />
+            <element signature="e#792#793#0" expanded="false" />
+            <element signature="e#829#830#0" expanded="false" />
+            <element signature="e#863#864#0" expanded="false" />
+            <element signature="e#902#903#0" expanded="false" />
+            <element signature="e#938#939#0" expanded="false" />
+            <element signature="e#968#969#0" expanded="false" />
+            <element signature="e#994#995#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1346,14 +1376,42 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="32" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#464#465#0" expanded="false" />
+            <element signature="e#494#495#0" expanded="false" />
+            <element signature="e#554#555#0" expanded="false" />
+            <element signature="e#592#593#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/model/ProfiledMethod.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="65" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#719#720#0" expanded="false" />
+            <element signature="e#745#746#0" expanded="false" />
+            <element signature="e#783#784#0" expanded="false" />
+            <element signature="e#813#814#0" expanded="false" />
+            <element signature="e#849#850#0" expanded="false" />
+            <element signature="e#881#882#0" expanded="false" />
+            <element signature="e#932#933#0" expanded="false" />
+            <element signature="e#969#970#0" expanded="false" />
+            <element signature="e#1003#1004#0" expanded="false" />
+            <element signature="e#1033#1034#0" expanded="false" />
+            <element signature="e#1080#1081#0" expanded="false" />
+            <element signature="e#1113#1114#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/teamcity-plugin.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.064516">
+          <caret line="17" column="39" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1361,16 +1419,26 @@
     <entry file="file://$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/runner/dotTraceBuildService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="76" column="47" selection-start-line="76" selection-start-column="12" selection-end-line="76" selection-end-column="12" />
+          <caret line="76" column="12" selection-start-line="76" selection-start-column="12" selection-end-line="76" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/teamcity-plugin.xml">
+    <entry file="file://$PROJECT_DIR$/dotTracePlugin-agent/src/main/java/com/dotTracePlugin/agent/runner/dotTraceProfilerCommandLineBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37969545">
-          <caret line="17" column="39" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="37" column="22" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dotTracePlugin-server/src/main/java/com/dotTracePlugin/server/dotTracePropertiesProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22047244">
+          <caret line="31" column="14" selection-start-line="31" selection-start-column="14" selection-end-line="33" selection-end-column="134" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

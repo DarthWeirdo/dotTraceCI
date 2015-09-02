@@ -41,9 +41,9 @@ public class dotTracePropertiesProcessor implements PropertiesProcessor {
             result.add(new InvalidProperty(dotTraceRunnerConstants.PARAM_THRESHOLDS, "Threshold values must be specified"));
         }
 
-        if (!checkThresholdValuesValidity(properties)){
-            result.add(new InvalidProperty(dotTraceRunnerConstants.PARAM_THRESHOLDS, "Invalid threshold values format"));
-        }
+//        if (!checkThresholdValuesValidity(properties)){
+//            result.add(new InvalidProperty(dotTraceRunnerConstants.PARAM_THRESHOLDS, "Invalid threshold values format"));
+//        }
 
         return result;
     }

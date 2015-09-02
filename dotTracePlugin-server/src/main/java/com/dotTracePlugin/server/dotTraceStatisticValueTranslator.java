@@ -42,6 +42,9 @@ public class dotTraceStatisticValueTranslator implements ServiceMessageTranslato
     public List<BuildMessage1> translate(@NotNull SRunningBuild runningBuild,
                                          @NotNull BuildMessage1 buildMessage,
                                          @NotNull ServiceMessage serviceMessage) {
+
+
+
         // prepare result
         List<BuildMessage1> result = new Vector<BuildMessage1>();
         result.add(buildMessage);
@@ -88,6 +91,12 @@ public class dotTraceStatisticValueTranslator implements ServiceMessageTranslato
 
             // finally
             if (comparer != null) {
+                // clear lists
+                myPerfBaseOwnTime.clear();
+                myPerfBaseTotalTime.clear();
+                myPerfReportOwnTime.clear();
+                myPerfReportTotalTime.clear();
+
                 if (comparer.isSuccessful()) {
                     result.add(new BuildMessage1(buildMessage.getSourceId(), buildMessage.getTypeId(),
                             buildMessage.getStatus(), buildMessage.getTimestamp(),
